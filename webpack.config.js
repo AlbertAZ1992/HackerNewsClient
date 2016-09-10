@@ -3,7 +3,7 @@ module.exports = {
     entry: ['./src/index.js'],
     output: {
         path: './dist/',
-        filename: 'index.js'
+        filename: 'build.js'
     },
     module:{
         loaders:[
@@ -13,14 +13,33 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.vue$/,
+                loader: 'vue'
+            },
+            {
+                test: /\.html$/,
+                loader: 'vue-html'
+            },
+            {
                 test: /\.json$/,
                 loader: 'json'
             },
             {
-                test: /\.less$/,
-                loader: "style!css!less"
+                test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+                loader: 'url',
+                query: {
+                    limit: 50000,
+                    name: '[path][name].[ext]?[hash]'
+                }
+            },
+            {
+                test:/\.less$/,
+                loaders:["style","css","less"]
+            },
+            {
+                test:/\.css$/,
+                loader:'css'
             }
         ]
     }
-
 };
