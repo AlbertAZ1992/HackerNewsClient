@@ -7,7 +7,6 @@
     .navbar-brand {
         margin: @margin-nav;
         padding: 0 @padding-navbar;
-        float: left;
         font-weight: @font-weight-bold;
         font-size: @font-size-medium;
         line-height: @line-height-base;
@@ -89,3 +88,27 @@
 .navbar-right {
     float: right !important;
 }
+
+// Nav under header
+.header-nav {
+    margin: @margin-top-header 0;
+    padding: @padding-navbar 0;
+    text-align: center;
+    border-bottom: @border-dot-size dotted @gray-light-color;
+    a {
+        margin: @margin-base;
+        height: @height-nav;
+        font-size: @font-size-medium;
+        font-weight: @font-weight-bold;
+        line-height: @line-height-base;
+        .sans-serif;
+        opacity: 0.8;
+        color: @gray-color;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+

@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(6);
+	module.exports = __webpack_require__(7);
 
 
 /***/ },
@@ -53,28 +53,29 @@
 /* 3 */,
 /* 4 */,
 /* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _vue = __webpack_require__(7);
+	var _vue = __webpack_require__(8);
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _vueRouter = __webpack_require__(9);
+	var _vueRouter = __webpack_require__(10);
 
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-	var _vueResource = __webpack_require__(10);
+	var _vueResource = __webpack_require__(11);
 
 	var _vueResource2 = _interopRequireDefault(_vueResource);
 
-	var _app = __webpack_require__(11);
+	var _app = __webpack_require__(12);
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _index = __webpack_require__(21);
+	var _index = __webpack_require__(22);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -96,7 +97,7 @@
 	router.start(_app2.default, "app");
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {/*!
@@ -10173,10 +10174,10 @@
 	}, 0);
 
 	module.exports = Vue;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(8)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(9)))
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -10362,7 +10363,7 @@
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -13076,7 +13077,7 @@
 	}));
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/*!
@@ -14588,17 +14589,17 @@
 	module.exports = plugin;
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(12)
-	__vue_script__ = __webpack_require__(16)
+	__webpack_require__(13)
+	__vue_script__ = __webpack_require__(17)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(21)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14617,16 +14618,16 @@
 	})()}
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(14);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(16)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -14643,21 +14644,21 @@
 	}
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(15)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".clearfix {\n  zoom: 1;\n}\n.clearfix:after {\n  content: \"\";\n  display: block;\n  clear: both;\n}\n* {\n  box-sizing: border-box;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n}\nhtml {\n  font-size: 62.5%;\n}\nbody {\n  font-family: monospace,\n        serif;\n  margin: 0;\n  font-size: 1.6rem;\n  color: #595959;\n  background-color: #fff;\n}\narticle {\n  overflow-x: hidden;\n}\nul,\nol,\ndl {\n  line-height: 1;\n}\na {\n  text-decoration: none;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n  outline: none;\n}\na:hover,\na:active {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\na:link,\na:visited {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n  font-weight: 700;\n}\nh1 {\n  font-size: 4.8rem;\n}\nh2 {\n  font-size: 3.2rem;\n}\nh3 {\n  font-size: 2.4rem;\n}\nh4 {\n  font-size: 2rem;\n}\nh5 {\n  font-size: 1.6rem;\n}\nh6 {\n  font-size: 1.4rem;\n}\n.hacker-navbar.index,\n.hacker-navbar.post {\n  z-index: 10;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.post .navbar-brand {\n  margin: 1rem;\n  padding: 0 2rem;\n  float: left;\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-brand:hover,\n.hacker-navbar.post .navbar-brand:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-nav,\n.hacker-navbar.post .navbar-nav {\n  margin: 1rem;\n  padding: 0 2rem;\n}\n.hacker-navbar.index .navbar-nav li,\n.hacker-navbar.post .navbar-nav li {\n  padding: 0 0.4rem;\n  display: inline-block;\n}\n.hacker-navbar.index .navbar-nav li a,\n.hacker-navbar.post .navbar-nav li a {\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-nav li a:hover,\n.hacker-navbar.post .navbar-nav li a:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.index .navbar-nav a {\n  color: #333;\n}\n.hacker-navbar.post .navbar-brand,\n.hacker-navbar.post .navbar-nav a {\n  color: #fff;\n}\n.hacker-navbar.normal-mode {\n  position: absolute;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n}\n.hacker-navbar.top-mode {\n  position: fixed;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n}\n.hacker-navbar.top-mode .navbar-brand {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-brand:hover {\n  color: #fff;\n  background: none;\n}\n.hacker-navbar.top-mode .navbar-nav li a {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-nav li a:hover {\n  color: #fff;\n  background: none;\n}\n.navbar-fixed-top {\n  position: fixed;\n  right: 0;\n  left: 0;\n  top: 0;\n  z-index: 1000;\n}\n.navbar-right {\n  float: right !important;\n}\n", ""]);
+	exports.push([module.id, ".clearfix {\n  zoom: 1;\n}\n.clearfix:after {\n  content: \"\";\n  display: block;\n  clear: both;\n}\n* {\n  box-sizing: border-box;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n}\nhtml {\n  font-size: 62.5%;\n}\nbody {\n  font-family: monospace,\n        serif;\n  margin: 0;\n  font-size: 1.6rem;\n  color: #595959;\n  background-color: #fff;\n}\narticle {\n  overflow-x: hidden;\n}\nul,\nol,\ndl {\n  line-height: 1;\n}\na {\n  text-decoration: none;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n  outline: none;\n}\na:hover,\na:active {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\na:link,\na:visited {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n  font-weight: 700;\n}\nh1 {\n  font-size: 4.8rem;\n}\nh2 {\n  font-size: 3.2rem;\n}\nh3 {\n  font-size: 2.4rem;\n}\nh4 {\n  font-size: 2rem;\n}\nh5 {\n  font-size: 1.6rem;\n}\nh6 {\n  font-size: 1.4rem;\n}\n@media screen and (max-width: 767px) {\n  .hacker-navbar.index .navbar-nav {\n    display: none !important;\n  }\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 0.5rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 767px) and (max-width: 1199px) {\n  .hacker-navbar.index .navbar-nav {\n    display: none !important;\n  }\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 1rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 1199px) {\n  .hacker-navbar.index .navbar-brand {\n    float: left;\n  }\n  .header-nav {\n    display: none;\n  }\n}\n.hacker-navbar.index,\n.hacker-navbar.post {\n  z-index: 10;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.post .navbar-brand {\n  margin: 1rem;\n  padding: 0 2rem;\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-brand:hover,\n.hacker-navbar.post .navbar-brand:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-nav,\n.hacker-navbar.post .navbar-nav {\n  margin: 1rem;\n  padding: 0 2rem;\n}\n.hacker-navbar.index .navbar-nav li,\n.hacker-navbar.post .navbar-nav li {\n  padding: 0 0.4rem;\n  display: inline-block;\n}\n.hacker-navbar.index .navbar-nav li a,\n.hacker-navbar.post .navbar-nav li a {\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-nav li a:hover,\n.hacker-navbar.post .navbar-nav li a:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.index .navbar-nav a {\n  color: #333;\n}\n.hacker-navbar.post .navbar-brand,\n.hacker-navbar.post .navbar-nav a {\n  color: #fff;\n}\n.hacker-navbar.normal-mode {\n  position: absolute;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n}\n.hacker-navbar.top-mode {\n  position: fixed;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n}\n.hacker-navbar.top-mode .navbar-brand {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-brand:hover {\n  color: #fff;\n  background: none;\n}\n.hacker-navbar.top-mode .navbar-nav li a {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-nav li a:hover {\n  color: #fff;\n  background: none;\n}\n.navbar-fixed-top {\n  position: fixed;\n  right: 0;\n  left: 0;\n  top: 0;\n  z-index: 1000;\n}\n.navbar-right {\n  float: right !important;\n}\n.header-nav {\n  margin: 4rem 0;\n  padding: 2rem 0;\n  text-align: center;\n  border-bottom: 0.3rem dotted #bfbfbf;\n}\n.header-nav a {\n  margin: 2rem;\n  height: 4.8rem;\n  font-size: 1.8rem;\n  font-weight: 700;\n  line-height: 1;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n  opacity: 0.8;\n  color: #595959;\n}\n.header-nav a:hover {\n  opacity: 1;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/*
@@ -14713,7 +14714,7 @@
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -14935,7 +14936,7 @@
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -14944,7 +14945,7 @@
 	    value: true
 	});
 
-	var _navbar = __webpack_require__(17);
+	var _navbar = __webpack_require__(18);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
@@ -14961,16 +14962,16 @@
 	};
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(18)
+	__vue_script__ = __webpack_require__(19)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/navbar.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(19)
+	__vue_template__ = __webpack_require__(20)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14989,7 +14990,7 @@
 	})()}
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -15029,28 +15030,28 @@
 	};
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"navbarContainer\">\n    <nav class=\"navbar navbar-fixed-top hacker-navbar JS_main_nav normal-mode index\">\n        <div class=\"container-fluid\">\n            <a class=\"navbar-brand\" v-link=\"'index'\">Hacker</a>\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li v-for=\"item in navOption\" v-bind:data-id=\"item.id\">\n                    <a v-link=\"\">{{item.name}}</a>\n                </li>\n            </ul>\n        </div>\n        <div class=\"clearfix\"></div>\n    </nav>\n</div>\n";
+	module.exports = "\n<div id=\"navbarContainer\">\n    <nav class=\"navbar navbar-fixed-top hacker-navbar JS_main_nav normal-mode index\">\n        <div class=\"container-fluid\">\n            <a class=\"navbar-brand\" v-link=\"'index'\">Hacker News</a>\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li v-for=\"item in navOption\" v-bind:data-id=\"item.id\">\n                    <a v-link=\"\">{{item.name}}</a>\n                </li>\n            </ul>\n        </div>\n        <div class=\"clearfix\"></div>\n    </nav>\n    <nav class=\"header-nav container\">\n        <a v-for=\"item in navOption\">{{item.name}}</a>\n    </nav>\n</div>\n";
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"appContainer\">\n    <navbar></navbar>\n    <div id=\"contentContainer\">\n        <router-view></router-view>\n    </div>\n</div>\n";
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(22)
+	__vue_script__ = __webpack_require__(23)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(23)
+	__vue_template__ = __webpack_require__(24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15069,7 +15070,7 @@
 	})()}
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -15085,10 +15086,10 @@
 	};
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"indexContent\">\n    index\n</div>\n";
+	module.exports = "\n<div id=\"indexContent\" >\n</div>\n";
 
 /***/ }
 /******/ ]);
