@@ -6,7 +6,7 @@ import index from "./components/index.vue";
 
 Vue.use(Router);
 Vue.use(Resource);
-const router = new Router();
+const router = new Router({hashbang: false});
 router.map({
     '/index':{
         component:index

@@ -1,0 +1,91 @@
+// Nav
+.hacker-navbar.index,
+.hacker-navbar.post {
+    // height: @height-nav;
+    z-index: 10;
+    .sans-serif;
+    .navbar-brand {
+        margin: @margin-nav;
+        padding: 0 @padding-navbar;
+        float: left;
+        font-weight: @font-weight-bold;
+        font-size: @font-size-medium;
+        line-height: @line-height-base;
+        &:hover {
+            color: @hacker-full-color;
+            background: none;
+        }
+    }
+    .navbar-nav {
+        margin: @margin-nav;
+        padding: 0 @padding-navbar;
+        li{
+            padding: 0 @padding-menu;
+            display: inline-block;
+            a{
+                font-weight: @font-weight-bold;
+                font-size: @font-size-medium;
+                line-height: @line-height-base;
+                &:hover {
+                    color: @hacker-full-color;
+                    background: none;
+                }
+            }
+        }
+    }
+}
+.hacker-navbar.index {
+    .navbar-brand,
+    .navbar-nav a{
+        color: @black-color;
+    }
+}
+
+.hacker-navbar.post {
+    .navbar-brand,
+    .navbar-nav a{
+        color: @white-color;
+    }
+}
+.hacker-navbar.normal-mode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    background: linear-gradient(@black-trans-light-color,transparent);
+}
+.hacker-navbar.top-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: none;
+    background: linear-gradient(@black-trans-dark-color,transparent);
+    .navbar-brand {
+        color: @white-trans-dark-color;
+        &:hover {
+            color: @white-color;
+            background: none;
+        }
+    }
+    .navbar-nav {
+        li {
+            a{
+                color: @white-trans-dark-color;
+                &:hover {
+                    color: @white-color;
+                    background: none;
+                }
+            }
+        }
+    }
+}
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.navbar-right {
+    float: right !important;
+}
