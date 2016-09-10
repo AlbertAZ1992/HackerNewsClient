@@ -2,17 +2,17 @@
     <div id="navbarContainer">
         <nav class="navbar navbar-fixed-top hacker-navbar JS_main_nav normal-mode index">
             <div class="container-fluid">
-                <a class="navbar-brand" v-link="'index'">Hacker News</a>
+                <a class="navbar-brand" v-link="'/index'">{{name}}</a>
                 <ul class="nav navbar-nav navbar-right">
                     <li v-for="item in navOption" v-bind:data-id="item.id">
-                        <a v-link="">{{item.name}}</a>
+                        <a v-link="'/'+item.name">{{item.name}}</a>
                     </li>
                 </ul>
             </div>
             <div class="clearfix"></div>
         </nav>
         <nav class="header-nav container">
-            <a v-for="item in navOption">{{item.name}}</a>
+            <a v-for="item in navOption" v-link="'/'+item.name">{{item.name}}</a>
         </nav>
     </div>
 </template>
@@ -22,6 +22,7 @@
         el: function(){
             return "#navbarContainer";
         },
+        props: ["name"],
         data: function(){
             return {
                 navOption: [
