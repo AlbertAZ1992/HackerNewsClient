@@ -1,0 +1,86 @@
+// Article list
+.hacker-article-list {
+    .txt {
+        position: relative;
+        width: @width-article-list;
+        margin: @margin-article-list auto;
+        .info-wrapper {
+            width: 100%;
+            // height: @height-info;
+            padding: @padding-info-left;
+            .article-list-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: @margin-info 0;
+                a {
+                    color: @black-color;
+                    &:hover {
+                        color: @hacker-full-color;
+                    }
+                }
+            }
+            .article-meta {
+                .article-time {
+                    .sans-serif;
+                    color: @black-color;
+                    font-size: @font-size-large;
+                    display: inline-block;
+                }
+                .article-tags {
+                    display: inline-block;
+                    text-align: left;
+                    a{
+                        display: inline-block;
+                        margin: @margin-tag-a @margin-left-article-tags 0 0;
+                        padding: 0 @padding-article-tags;
+                        .sans-serif;
+                        font-size: @font-size-large;
+                        line-height: @font-size-large;
+                        color: @black-color;
+                        background: @hacker-trans-color;
+                        -webkit-border-radius: @small-border-radius;
+                        -moz-border-radius: @small-border-radius;
+                        -ms-border-radius: @small-border-radius;
+                        -o-border-radius: @small-border-radius;
+                        border-radius: @small-border-radius;
+                        &:hover {
+                            color: @white-color;
+                            background: @hacker-full-color;
+                        }
+                    }
+                }
+            }
+        }
+        .article-excerpt {
+            padding: 0 @padding-info-left;
+            .sans-serif;
+            font-weight: @font-weight-light;
+        }
+        .article-readmore {
+            width: 100%;
+            .sans-serif;
+            font-size: @font-size-large;
+            background: none;
+            text-align: center;
+            margin: @margin-base 0;
+            a {
+                display: inline-block;
+                color: @black-color;
+                padding: 0 @padding-article-tags;
+                -webkit-border-radius: @small-border-radius;
+                -moz-border-radius: @small-border-radius;
+                -ms-border-radius: @small-border-radius;
+                -o-border-radius: @small-border-radius;
+                border-radius: @small-border-radius;
+                &:hover {
+                    color: @white-color;
+                    background: @hacker-full-color;
+                }
+
+            }
+        }
+    }
+
+}
+
