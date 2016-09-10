@@ -14694,7 +14694,7 @@
 
 
 	// module
-	exports.push([module.id, ".clearfix {\n  zoom: 1;\n}\n.clearfix:after {\n  content: \"\";\n  display: block;\n  clear: both;\n}\n* {\n  box-sizing: border-box;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n}\nhtml {\n  font-size: 62.5%;\n}\nbody {\n  font-family: monospace,\n        serif;\n  margin: 0;\n  font-size: 1.6rem;\n  color: #595959;\n  background-color: #fff;\n}\narticle {\n  overflow-x: hidden;\n}\nul,\nol,\ndl {\n  line-height: 1;\n}\na {\n  text-decoration: none;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n  outline: none;\n}\na:hover,\na:active {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\na:link,\na:visited {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n  font-weight: 700;\n}\nh1 {\n  font-size: 4.8rem;\n}\nh2 {\n  font-size: 3.2rem;\n}\nh3 {\n  font-size: 2.4rem;\n}\nh4 {\n  font-size: 2rem;\n}\nh5 {\n  font-size: 1.6rem;\n}\nh6 {\n  font-size: 1.4rem;\n}\n@media screen and (max-width: 767px) {\n  .hacker-navbar.index .navbar-nav {\n    display: none !important;\n  }\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 0.5rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 767px) and (max-width: 1199px) {\n  .hacker-navbar.index .navbar-nav {\n    display: none !important;\n  }\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 1rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 1199px) {\n  .hacker-navbar.index .navbar-brand {\n    float: left;\n  }\n  .header-nav {\n    display: none;\n  }\n}\n.hacker-navbar.index,\n.hacker-navbar.post {\n  z-index: 10;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.post .navbar-brand {\n  margin: 1rem;\n  padding: 0 2rem;\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-brand:hover,\n.hacker-navbar.post .navbar-brand:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-nav,\n.hacker-navbar.post .navbar-nav {\n  margin: 1rem;\n  padding: 0 2rem;\n}\n.hacker-navbar.index .navbar-nav li,\n.hacker-navbar.post .navbar-nav li {\n  padding: 0 0.4rem;\n  display: inline-block;\n}\n.hacker-navbar.index .navbar-nav li a,\n.hacker-navbar.post .navbar-nav li a {\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-nav li a:hover,\n.hacker-navbar.post .navbar-nav li a:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.index .navbar-nav a {\n  color: #333;\n}\n.hacker-navbar.post .navbar-brand,\n.hacker-navbar.post .navbar-nav a {\n  color: #fff;\n}\n.hacker-navbar.normal-mode {\n  position: absolute;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n}\n.hacker-navbar.top-mode {\n  position: fixed;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n}\n.hacker-navbar.top-mode .navbar-brand {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-brand:hover {\n  color: #fff;\n  background: none;\n}\n.hacker-navbar.top-mode .navbar-nav li a {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-nav li a:hover {\n  color: #fff;\n  background: none;\n}\n.navbar-fixed-top {\n  position: fixed;\n  right: 0;\n  left: 0;\n  top: 0;\n  z-index: 1000;\n}\n.navbar-right {\n  float: right !important;\n}\n.header-nav {\n  margin: 4rem 0;\n  padding: 2rem 0;\n  text-align: center;\n  border-bottom: 0.3rem dotted #bfbfbf;\n}\n.header-nav a {\n  margin: 2rem;\n  height: 4.8rem;\n  font-size: 1.8rem;\n  font-weight: 700;\n  line-height: 1;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n  opacity: 0.8;\n  color: #595959;\n}\n.header-nav a:hover {\n  color: #3dd179;\n  background: none;\n  opacity: 1;\n}\n", ""]);
+	exports.push([module.id, ".clearfix {\n  zoom: 1;\n}\n.clearfix:after {\n  content: \"\";\n  display: block;\n  clear: both;\n}\n* {\n  box-sizing: border-box;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n}\nhtml {\n  font-size: 62.5%;\n}\nbody {\n  font-family: monospace,\n        serif;\n  margin: 0;\n  font-size: 1.6rem;\n  color: #595959;\n  background-color: #fff;\n}\narticle {\n  overflow-x: hidden;\n}\nul,\nol,\ndl {\n  line-height: 1;\n}\na {\n  text-decoration: none;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n  outline: none;\n}\na:hover,\na:active {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\na:link,\na:visited {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n  font-weight: 700;\n}\nh1 {\n  font-size: 4.8rem;\n}\nh2 {\n  font-size: 3.2rem;\n}\nh3 {\n  font-size: 2.4rem;\n}\nh4 {\n  font-size: 2rem;\n}\nh5 {\n  font-size: 1.6rem;\n}\nh6 {\n  font-size: 1.4rem;\n}\n@media screen and (max-width: 767px) {\n  .hacker-navbar.index .navbar-nav {\n    display: none !important;\n  }\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 0.5rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 767px) and (max-width: 1199px) {\n  .hacker-navbar.index .navbar-nav {\n    display: none !important;\n  }\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 1rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 1199px) {\n  .hacker-navbar.index .navbar-brand {\n    float: left;\n  }\n  .header-nav {\n    display: none;\n  }\n  #contentContainer {\n    margin: 6rem 0;\n  }\n}\n.hacker-navbar.index,\n.hacker-navbar.post {\n  z-index: 10;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.post .navbar-brand {\n  margin: 1rem;\n  padding: 0 2rem;\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-brand:hover,\n.hacker-navbar.post .navbar-brand:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-nav,\n.hacker-navbar.post .navbar-nav {\n  margin: 1rem;\n  padding: 0 2rem;\n}\n.hacker-navbar.index .navbar-nav li,\n.hacker-navbar.post .navbar-nav li {\n  padding: 0 0.4rem;\n  display: inline-block;\n}\n.hacker-navbar.index .navbar-nav li a,\n.hacker-navbar.post .navbar-nav li a {\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-nav li a:hover,\n.hacker-navbar.post .navbar-nav li a:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.index .navbar-nav a {\n  color: #333;\n}\n.hacker-navbar.post .navbar-brand,\n.hacker-navbar.post .navbar-nav a {\n  color: #fff;\n}\n.hacker-navbar.normal-mode {\n  position: absolute;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);\n}\n.hacker-navbar.top-mode {\n  position: fixed;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n}\n.hacker-navbar.top-mode .navbar-brand {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-brand:hover {\n  color: #fff;\n  background: none;\n}\n.hacker-navbar.top-mode .navbar-nav li a {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-nav li a:hover {\n  color: #fff;\n  background: none;\n}\n.navbar-fixed-top {\n  position: fixed;\n  right: 0;\n  left: 0;\n  top: 0;\n  z-index: 1000;\n}\n.navbar-right {\n  float: right !important;\n}\n.header-nav {\n  margin: 4rem 0;\n  padding: 2rem 0;\n  text-align: center;\n  border-bottom: 0.3rem dotted #bfbfbf;\n}\n.header-nav a {\n  margin: 2rem;\n  height: 4.8rem;\n  font-size: 1.8rem;\n  font-weight: 700;\n  line-height: 1;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", \"Input\", Arial, sans-serif;\n  opacity: 0.8;\n  color: #595959;\n}\n.header-nav a:hover {\n  color: #3dd179;\n  background: none;\n  opacity: 1;\n}\n", ""]);
 
 	// exports
 
@@ -15016,6 +15016,9 @@
 	    },
 	    methods: {
 	        scroll: function scroll(event) {}
+	    },
+	    beforeCompile: function beforeCompile() {
+	        this.$data.height = window.innerHeight;
 	    }
 	};
 
@@ -15187,10 +15190,48 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var baseUrl = "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty";
+	var itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
+
 	exports.default = {
 	    name: "news",
 	    el: function el() {
 	        return "#newsContent";
+	    },
+	    data: function data() {
+	        return {
+	            msg: "article",
+	            api: {
+	                list: [],
+	                items: []
+	            },
+	            title: "NEW STORIES"
+	        };
+	    },
+	    route: {
+	        data: function data() {
+	            var _this2 = this;
+
+	            this.$http.get(baseUrl).then(function (response) {
+	                _this2.$data.api.list = response;
+	                return response.json();
+	            }).then(function (list) {
+	                var tmpList = list.slice(0, 4);
+	                tmpList.map(function (i) {
+	                    _this2.$http.get(itemUrl + i + '.json?print=pretty').then(function (response) {
+	                        _this2.$data.api.items.push(response.data);
+	                        console.log(_this2.$data.api.items);
+	                    });
+	                });
+	            });
+	        }
+	    },
+	    methods: {
+	        err: function err(event) {
+	            var _this = event.target;
+	            _this.style.visibility = "hidden";
+	        }
 	    }
 	};
 
@@ -15198,7 +15239,7 @@
 /* 27 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"newsContent\" >\n</div>\n";
+	module.exports = "\n<div id=\"newsContent\" >\n    <span>{{title}}</span>\n    <ul id=\"list\">\n        <li v-for=\"item in api.items\" v-link=\"\" v-on:error=\"err($event)\">\n            <span>\n                {{item.title}}\n            </span>\n        </li>\n    </ul>\n</div>\n";
 
 /***/ },
 /* 28 */
