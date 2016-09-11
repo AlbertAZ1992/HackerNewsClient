@@ -25,7 +25,7 @@ module.exports = {
                 loader: 'json'
             },
             {
-                test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+                test: /\.(gif|jpg|png|woff|svg|eot|ttf|otf)\??.*$/,
                 loader: 'url',
                 query: {
                     limit: 50000,

@@ -7,6 +7,8 @@ import comments from "./components/comments.vue";
 import shows from "./components/shows.vue";
 import asks from "./components/asks.vue";
 import jobs from "./components/jobs.vue";
+import contents from "./components/contents.vue";
+import users from "./components/users.vue";
 
 Vue.use(Router);
 Vue.use(Resource);
@@ -29,6 +31,12 @@ router.map({
     },
     '/job':{
         component:jobs
+    },
+    '/contents':{
+        component:contents
+    },
+    '/users':{
+        component:users
     }
 });
 

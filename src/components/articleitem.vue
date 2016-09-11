@@ -8,8 +8,8 @@
                 <div class="article-meta">
                     <span class="article-time" datetime="">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>
                     <span class="article-tags">
-                        <a class="tag" href="">{{item.time | momentFromNow}}</a>
-                        <a class="tag" href="">by {{item.by}}</a>
+                        <a class="tag" v-link="{path:'/contents?id='+item.id}">{{item.time | momentFromNow}}</a>
+                        <a class="tag" v-link="{path:'/users?id='+item.by}">{{item.by}}</a>
                     </span>
                 </div>
             </div>
@@ -18,7 +18,7 @@
         </section>
         <footer>
             <div class="article-readmore">
-                <a href="item.url" title="READ MORE">READ MORE »</a>
+                <a v-link="{path:'/contents?id='+item.id}" title="READ MORE">READ MORE »</a>
             </div>
         </footer>
     </article>
