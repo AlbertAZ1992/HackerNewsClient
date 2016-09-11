@@ -2,9 +2,7 @@
     // .hacker-navbar.post .navbar-nav{
     //     display: none !important;
     // }
-    .hacker-navbar.index .navbar-nav{
-        display: none !important;
-    }
+
     .container-fluid{
         text-align: center;
         margin: @margin-base 0;
@@ -14,40 +12,31 @@
         font-size: @font-size-base !important;
     }
 
-    // .hacker-article-list {
-    //     .hacker-article-item.photo,
-    //     .hacker-article-item.txt {
-    //         position: relative;
-    //         width: @width-full;
-    //         margin: 0 auto;
-    //         .info-wrapper {
-    //             .article-meta {
-    //                 .article-time {
-    //                     display: block;
-    //                     margin: @margin-info 0;
-    //                 }
-    //                 .article-tags {
-    //                     display: block;
-    //                 }
+    .hacker-article-list {
+        .hacker-article-item.txt {
+            position: relative;
+            width: @width-full;
+            margin: 0 auto;
+            .info-wrapper {
+                .article-meta {
+                    .article-time {
+                        display: block;
+                        margin: @margin-info 0;
+                    }
+                    .article-tags {
+                        display: block;
+                    }
 
-    //             }
-    //         }
-    //     }
-    // }
-    // #hacker_post_header {
-    //     height: @height-mobile-post-header;
-    //     .hacker-post-heading {
-    //         padding: @padding-post-heading 0;
-    //     }
-    // }
-    // .article-content {
-    //     width: @width-mobile-article-content;
-    // }
+                }
+            }
+        }
+    }
+    .article-content {
+        width: @width-mobile-article-content;
+    }
 }
 @media screen and (min-width: @screen-sm-max) and (max-width: @screen-md-max){
-    .hacker-navbar.index .navbar-nav{
-        display: none !important;
-    }
+
     .container-fluid{
         text-align: center;
         margin: @margin-base 0;
@@ -59,11 +48,19 @@
 }
 
 @media screen and (min-width: @screen-md-max){
-    .hacker-navbar.index .navbar-brand{
-        float: left;
+    // .hacker-navbar.index .navbar-brand{
+    //     float: left;
+    // }
+    // .header-nav{
+    //     display: none;
+    // }
+    .container-fluid{
+        text-align: center;
+        margin: @margin-base 0;
     }
-    .header-nav{
-        display: none;
+    .header-nav a{
+        margin: @margin-nav !important;
+        font-size: @font-size-base !important;
     }
     #contentContainer{
         margin: @margin-info 0 0 0;

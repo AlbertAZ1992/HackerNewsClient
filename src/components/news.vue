@@ -32,7 +32,9 @@
                 },
                 title: "NEW STORIES",
                 listNumber: 0,
-                listHeight: 0
+                listHeight: 0,
+                def: 100
+
             }
         },
         route: {
@@ -48,7 +50,6 @@
                             this.$http.get(itemUrl + i + '.json?print=pretty')
                                 .then((response) => {
                                     this.$data.api.items.push(response.data);
-                                    // console.log(this.$data.api.items);
                                 });
                         });
 
@@ -61,20 +62,15 @@
                 this.$http.get(itemUrl + this.$data.api.list[i] + '.json?print=pretty')
                                 .then((response) => {
                                     this.$data.api.items.push(response.data);
-                                    // console.log(this.$data.api.items);
                                 });
-                console.log(this.$data.listNumber);
             },
             scroll: function(event) {
                 let _this = event.target;
                 let scrollTop = _this.scrollTop;
                 let listHeight = document.querySelector(".hacker-article-list").scrollHeight;
-                console.log(listHeight,scrollTop);
-                if(scrollTop + window.innerHeight > listHeight){
-                    var i = 5;
-                    while(i--){
-                        this.add();
-                    }
+                // console.log(window.screen.height,listHeight,scrollTop);
+                if(scrollTop + window.screen.height + this.$data.def >= listHeight){
+                    this.add();
                 }
             }
         },
