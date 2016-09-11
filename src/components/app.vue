@@ -1,9 +1,8 @@
 <template>
-    <div id="appContainer" v-bind:style="{height:containerHeight}">
+    <div id="appContainer" v-bind:style="{height:containerHeight}" >
         <navbar name="Hacker News"></navbar>
         <div id="contentContainer"
-            v-on:scroll="scroll($event)"
-            v-bind:style="{height:contentContainerHeight}">
+            v-bind:style="{marginTop:contentContainerMarginTop,height:contentContainerHeight}">
             <router-view></router-view>
         </div>
     </div>
@@ -17,7 +16,8 @@
         },
         data: function() {
             return {
-                height: 960
+                height: 960,
+                marginTop: 160
             }
         },
         components: {
@@ -25,20 +25,19 @@
         },
         computed: {
             contentContainerHeight: function() {
-                return (this.height - 60) + "px";
+                return this.height + "px";
             },
             containerHeight: function() {
                 return this.height + "px";
-            }
-        },
-        methods: {
-            scroll: function(event) {
+            },
+            contentContainerMarginTop: function() {
+                return this.marginTop + "px";
             }
         },
         beforeCompile: function() {
             this.$data.height = window.innerHeight;
         }
     }
-</script>1·
+</script>
 <style src="../style/style.less" lang="less"></style>
 

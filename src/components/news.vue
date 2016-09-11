@@ -1,35 +1,19 @@
 <template>
-    <div id="newsContent" >
-        <span>{{title}}</span>
-        <div class="hacker-article-list ">
-            <article class="hacker-article-item txt" v-for="item in api.items" track-by="id" v-link="" v-on:error="err($event)">
-                <header>
-                    <div class="info-wrapper">
-                        <h2 class="article-list-title">
-                            <a href="{{item.url}}">{{item.title}}</a>
-                        </h2>
-                        <div class="article-meta">
-                            <span class="article-time" datetime="">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>
-                            <span class="article-tags">
-                                <a class="tag" href="">{{item.time | momentFromNow}}</a>
-                                <a class="tag" href="">by {{item.by}}</a>
-                            </span>
-                        </div>
-                    </div>
-                </header>
-                <section class="article-excerpt">{{item.text | excerpt '50'}}
-                </section>
-                <footer>
-                    <div class="article-readmore">
-                        <a href="item.url" title="READ MORE">READ MORE »</a>
-                    </div>
-                </footer>
-            </article>
+    <div id="newsContent"
+            v-bind:style="{overflow:'auto',height:'100%'}"
+            v-on:scroll="scroll($event)">
+        <div class="hacker-article-list" >
+            <articleitem v-for="item in api.items | orderBy 'time' " :item="item"></articleitem>
         </div>
     </div>
 </template>
 <script>
+    import articleitem from "./articleitem.vue";
     import moment from "moment";
+    import Vue from "vue";
+    import infiniteScroll from "vue-infinite-scroll";
+
+
     const baseUrl = "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty";
     const itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
 
@@ -46,7 +30,9 @@
                     list: [],
                     items: []
                 },
-                title: "NEW STORIES"
+                title: "NEW STORIES",
+                listNumber: 0,
+                listHeight: 0
             }
         },
         route: {
@@ -57,7 +43,7 @@
                         return response.json();
                     })
                     .then((list) => {
-                        let tmpList = list.slice(0,4);
+                        let tmpList = list.slice(0,this.$data.listNumber);
                         tmpList.map((i) => {
                             this.$http.get(itemUrl + i + '.json?print=pretty')
                                 .then((response) => {
@@ -70,24 +56,33 @@
             }
         },
         methods: {
-            err: function(event) {
-                var _this = event.target;
-                _this.style.visibility = "hidden";
+            add: function() {
+                let i = this.$data.listNumber++;
+                this.$http.get(itemUrl + this.$data.api.list[i] + '.json?print=pretty')
+                                .then((response) => {
+                                    this.$data.api.items.push(response.data);
+                                    // console.log(this.$data.api.items);
+                                });
+                console.log(this.$data.listNumber);
+            },
+            scroll: function(event) {
+                let _this = event.target;
+                let scrollTop = _this.scrollTop;
+                let listHeight = document.querySelector(".hacker-article-list").scrollHeight;
+                console.log(listHeight,scrollTop);
+                if(scrollTop + window.innerHeight > listHeight){
+                    var i = 5;
+                    while(i--){
+                        this.add();
+                    }
+                }
             }
         },
-        filters: {
-            moment: function (value, formatString) {
-                formatString = formatString || 'YYYY-MM-DD HH:mm:ss';
-                return moment(value).format(formatString);
-            },
-            momentFromNow: function (value, formatString) {
-                formatString = formatString || '"YYYY';
-                return moment(value, formatString).fromNow();
-            },
-            excerpt: function(vaule, formatString){
-
-                return value.substr(0,Number(formatString));
-            }
+        components: {
+            "articleitem": articleitem
+        },
+        beforeCompile: function() {
+            this.$data.listNumber = Math.ceil(window.innerHeight/100);
         }
-    }
+    };
 </script>

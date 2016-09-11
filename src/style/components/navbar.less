@@ -51,7 +51,8 @@
     top: 0;
     left: 0;
     border: none;
-    background: linear-gradient(@black-trans-light-color,transparent);
+    background: @white-color;
+    // background: linear-gradient(@black-trans-light-color,transparent);
 }
 .hacker-navbar.top-mode {
     position: fixed;
@@ -94,21 +95,62 @@
     margin: @margin-top-header 0;
     padding: @padding-navbar 0;
     text-align: center;
+    background: @white-color;
     border-bottom: @border-dot-size dotted @gray-light-color;
     a {
+        // margin: @margin-tag-a;
+        padding: @padding-content-a;
+        display: inline-block;
+        -webkit-border-radius: @large-border-radius;
+        -moz-border-radius: @large-border-radius;
+        -ms-border-radius: @large-border-radius;
+        -o-border-radius: @large-border-radius;
+        border-radius: @large-border-radius;
+        text-align: center;
+        background: @white-trans-light-color;
+        color: @black-color;
+
         margin: @margin-base;
         height: @height-nav;
         font-size: @font-size-medium;
         font-weight: @font-weight-bold;
         line-height: @line-height-base;
         .sans-serif;
-        opacity: 0.8;
-        color: @gray-color;
+    }
+    .header-nav-tag-0{
+        border: 2px solid @tag-color-0;
+        &:hover{
+            background: @tag-color-0;
+            color: @white-color;
+        }
 
-        &:hover {
-            color: @hacker-full-color;
-            background: none;
-            opacity: 1;
+    }
+    .header-nav-tag-1{
+        border: 2px solid @tag-color-1;
+        &:hover{
+            background: @tag-color-1;
+            color: @white-color;
+        }
+    }
+    .header-nav-tag-2{
+        border: 2px solid @tag-color-2;
+        &:hover{
+            background: @tag-color-2;
+            color: @white-color;
+        }
+    }
+    .header-nav-tag-3{
+        border: 2px solid @tag-color-3;
+        &:hover{
+            background: @tag-color-3;
+            color: @white-color;
+        }
+    }
+    .header-nav-tag-4{
+        border: 2px solid @tag-color-4;
+        &:hover{
+            background: @tag-color-4;
+            color: @white-color;
         }
     }
 }

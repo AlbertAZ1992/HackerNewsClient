@@ -1,5 +1,5 @@
 <template>
-    <div id="navbarContainer">
+    <div id="navbarContainer" v-bind:style="{width:'100%',position:'fixed',top:'0',zIndex:'10'}">
         <nav class="navbar navbar-fixed-top hacker-navbar JS_main_nav normal-mode index">
             <div class="container-fluid">
                 <a class="navbar-brand" v-link="'/index'">{{name}}</a>
@@ -12,7 +12,7 @@
             <div class="clearfix"></div>
         </nav>
         <nav class="header-nav container">
-            <a v-for="item in navOption" v-link="'/'+item.name">{{item.name}}</a>
+            <a class="header-nav-tag-{{item.id}}" v-for="item in navOption" v-link="'/'+item.name">{{item.name}}</a>
         </nav>
     </div>
 </template>
@@ -45,10 +45,6 @@
                     {
                         name:"job",
                         id:4
-                    },
-                    {
-                        name:"submit",
-                        id:5
                     }
                 ]
             }
