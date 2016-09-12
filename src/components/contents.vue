@@ -55,8 +55,8 @@
                 authorurl: "http://deacyn.com",
                 tool: "HN API",
                 toolurl: "https://github.com/HackerNews/API",
-                repo: "",
-                repourl: "https://github.com/Deacyn/hexo-theme-hacker"
+                repo: "HackerNewsClient",
+                repourl: "https://github.com/Deacyn/HackerNewsClient"
 
             }
         },
