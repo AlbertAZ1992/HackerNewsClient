@@ -6,9 +6,9 @@
 
 ## Demo
 
-#### [Demo地址](http://zhihu.garychang.cn)
+#### [Demo地址](http://deacyn.com/demos/hackernews/)
 
-##
+## Files
 
 ```
 .
@@ -52,4 +52,21 @@
   - `webpack` 打包构建
   - Style design
   - Mobile-optimized
+
+
+## Routers
+
+|#|页面|url|
+|---|---|---|
+|1|首页|http://deacyn.com/demos/hackernews/#/index
+|2|news页|http://deacyn.com/demos/hackernews/#/new
+|3|top页|http://deacyn.com/demos/hackernews/#/top
+|4|show页|http://deacyn.com/demos/hackernews/#/show
+|5|job页|http://deacyn.com/demos/hackernews/#/job
+|6|article conten页|http://deacyn.com/demos/hackernews/#/contents?id=12476685
+|7|user profile页|http://deacyn.com/demos/hackernews/#/users?id=dfguo
+|8|user submissions页|http://deacyn.com/demos/hackernews/#/submits?id=dfguo
+
+`new 页`按照`time`降序排序，其余列表页面按照`score`降序排序
+
 
