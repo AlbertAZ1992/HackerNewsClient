@@ -82,9 +82,9 @@
 
 	var _news2 = _interopRequireDefault(_news);
 
-	var _comments = __webpack_require__(137);
+	var _tops = __webpack_require__(137);
 
-	var _comments2 = _interopRequireDefault(_comments);
+	var _tops2 = _interopRequireDefault(_tops);
 
 	var _shows = __webpack_require__(140);
 
@@ -122,8 +122,8 @@
 	    '/new': {
 	        component: _news2.default
 	    },
-	    '/comments': {
-	        component: _comments2.default
+	    '/top': {
+	        component: _tops2.default
 	    },
 	    '/show': {
 	        component: _shows2.default
@@ -15097,7 +15097,7 @@
 	                name: "new",
 	                id: 0
 	            }, {
-	                name: "comments",
+	                name: "top",
 	                id: 1
 	            }, {
 	                name: "show",
@@ -29365,7 +29365,7 @@
 /* 136 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"newsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\" v-show=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' \" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
+	module.exports = "\n<div id=\"newsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\" v-show=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' -1\" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ },
 /* 137 */
@@ -29376,7 +29376,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/comments.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src/components/tops.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(139)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -29387,7 +29387,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./comments.vue"
+	  var id = "./tops.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -29397,17 +29397,86 @@
 
 /***/ },
 /* 138 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _articleitem = __webpack_require__(29);
+
+	var _articleitem2 = _interopRequireDefault(_articleitem);
+
+	var _moment = __webpack_require__(31);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var baseUrl = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
+	var itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
+
 	exports.default = {
-	    name: "comments",
+	    name: "tops",
 	    el: function el() {
-	        return "#commentsContent";
+	        return "#topsContent";
+	    },
+	    data: function data() {
+	        return {
+	            headerText: "topstories",
+	            api: {
+	                list: [],
+	                items: []
+	            },
+	            listNumber: 0,
+	            listHeight: 0,
+	            def: 100
+
+	        };
+	    },
+	    route: {
+	        data: function data() {
+	            var _this2 = this;
+
+	            this.$http.get(baseUrl).then(function (response) {
+	                _this2.$data.api.list = response.data;
+	                return response.data;
+	            }).then(function (list) {
+	                var tmpList = list.slice(0, _this2.$data.listNumber);
+	                tmpList.map(function (i) {
+	                    _this2.$http.get(itemUrl + i + '.json?print=pretty').then(function (response) {
+	                        _this2.$data.api.items.push(response.data);
+	                    });
+	                });
+	            });
+	        }
+	    },
+	    methods: {
+	        add: function add() {
+	            var _this3 = this;
+
+	            var i = this.$data.listNumber++;
+	            this.$http.get(itemUrl + this.$data.api.list[i] + '.json?print=pretty').then(function (response) {
+	                _this3.$data.api.items.push(response.data);
+	            });
+	        },
+	        scroll: function scroll(event) {
+	            var _this = event.target;
+	            var scrollTop = _this.scrollTop;
+	            var listHeight = document.querySelector(".hacker-article-list").scrollHeight;
+
+	            if (scrollTop + window.screen.height + this.$data.def >= listHeight) {
+	                this.add();
+	            }
+	        }
+	    },
+	    components: {
+	        "articleitem": _articleitem2.default
+	    },
+	    beforeCompile: function beforeCompile() {
+	        this.$data.listNumber = Math.ceil(window.innerHeight / 100);
 	    }
 	};
 
@@ -29415,7 +29484,7 @@
 /* 139 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"commentsContent\" >\n</div>\n";
+	module.exports = "\n<div id=\"topsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\" v-show=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'score' -1\" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ },
 /* 140 */
@@ -29447,17 +29516,86 @@
 
 /***/ },
 /* 141 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _articleitem = __webpack_require__(29);
+
+	var _articleitem2 = _interopRequireDefault(_articleitem);
+
+	var _moment = __webpack_require__(31);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var baseUrl = "https://hacker-news.firebaseio.com/v0/showstories.json?print=pretty";
+	var itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
+
 	exports.default = {
 	    name: "shows",
 	    el: function el() {
 	        return "#showsContent";
+	    },
+	    data: function data() {
+	        return {
+	            headerText: "showstories",
+	            api: {
+	                list: [],
+	                items: []
+	            },
+	            listNumber: 0,
+	            listHeight: 0,
+	            def: 100
+
+	        };
+	    },
+	    route: {
+	        data: function data() {
+	            var _this2 = this;
+
+	            this.$http.get(baseUrl).then(function (response) {
+	                _this2.$data.api.list = response.data;
+	                return response.data;
+	            }).then(function (list) {
+	                var tmpList = list.slice(0, _this2.$data.listNumber);
+	                tmpList.map(function (i) {
+	                    _this2.$http.get(itemUrl + i + '.json?print=pretty').then(function (response) {
+	                        _this2.$data.api.items.push(response.data);
+	                    });
+	                });
+	            });
+	        }
+	    },
+	    methods: {
+	        add: function add() {
+	            var _this3 = this;
+
+	            var i = this.$data.listNumber++;
+	            this.$http.get(itemUrl + this.$data.api.list[i] + '.json?print=pretty').then(function (response) {
+	                _this3.$data.api.items.push(response.data);
+	            });
+	        },
+	        scroll: function scroll(event) {
+	            var _this = event.target;
+	            var scrollTop = _this.scrollTop;
+	            var listHeight = document.querySelector(".hacker-article-list").scrollHeight;
+
+	            if (scrollTop + window.screen.height + this.$data.def >= listHeight) {
+	                this.add();
+	            }
+	        }
+	    },
+	    components: {
+	        "articleitem": _articleitem2.default
+	    },
+	    beforeCompile: function beforeCompile() {
+	        this.$data.listNumber = Math.ceil(window.innerHeight / 100);
 	    }
 	};
 
@@ -29465,7 +29603,7 @@
 /* 142 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"showsContent\" >\n</div>\n";
+	module.exports = "\n<div id=\"showsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\" v-show=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' -1\" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ },
 /* 143 */
@@ -29497,17 +29635,86 @@
 
 /***/ },
 /* 144 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _articleitem = __webpack_require__(29);
+
+	var _articleitem2 = _interopRequireDefault(_articleitem);
+
+	var _moment = __webpack_require__(31);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var baseUrl = "https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty";
+	var itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
+
 	exports.default = {
-	    name: "news",
+	    name: "asks",
 	    el: function el() {
-	        return "#newsContent";
+	        return "#asksContent";
+	    },
+	    data: function data() {
+	        return {
+	            headerText: "askstories",
+	            api: {
+	                list: [],
+	                items: []
+	            },
+	            listNumber: 0,
+	            listHeight: 0,
+	            def: 100
+
+	        };
+	    },
+	    route: {
+	        data: function data() {
+	            var _this2 = this;
+
+	            this.$http.get(baseUrl).then(function (response) {
+	                _this2.$data.api.list = response.data;
+	                return response.data;
+	            }).then(function (list) {
+	                var tmpList = list.slice(0, _this2.$data.listNumber);
+	                tmpList.map(function (i) {
+	                    _this2.$http.get(itemUrl + i + '.json?print=pretty').then(function (response) {
+	                        _this2.$data.api.items.push(response.data);
+	                    });
+	                });
+	            });
+	        }
+	    },
+	    methods: {
+	        add: function add() {
+	            var _this3 = this;
+
+	            var i = this.$data.listNumber++;
+	            this.$http.get(itemUrl + this.$data.api.list[i] + '.json?print=pretty').then(function (response) {
+	                _this3.$data.api.items.push(response.data);
+	            });
+	        },
+	        scroll: function scroll(event) {
+	            var _this = event.target;
+	            var scrollTop = _this.scrollTop;
+	            var listHeight = document.querySelector(".hacker-article-list").scrollHeight;
+
+	            if (scrollTop + window.screen.height + this.$data.def >= listHeight) {
+	                this.add();
+	            }
+	        }
+	    },
+	    components: {
+	        "articleitem": _articleitem2.default
+	    },
+	    beforeCompile: function beforeCompile() {
+	        this.$data.listNumber = Math.ceil(window.innerHeight / 100);
 	    }
 	};
 
@@ -29515,7 +29722,7 @@
 /* 145 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"newsContent\" >\n</div>\n";
+	module.exports = "\n<div id=\"asksContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\" v-show=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' -1\" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ },
 /* 146 */
@@ -29547,17 +29754,86 @@
 
 /***/ },
 /* 147 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _articleitem = __webpack_require__(29);
+
+	var _articleitem2 = _interopRequireDefault(_articleitem);
+
+	var _moment = __webpack_require__(31);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var baseUrl = "https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty";
+	var itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
+
 	exports.default = {
 	    name: "jobs",
 	    el: function el() {
 	        return "#jobsContent";
+	    },
+	    data: function data() {
+	        return {
+	            headerText: "jobstories",
+	            api: {
+	                list: [],
+	                items: []
+	            },
+	            listNumber: 0,
+	            listHeight: 0,
+	            def: 100
+
+	        };
+	    },
+	    route: {
+	        data: function data() {
+	            var _this2 = this;
+
+	            this.$http.get(baseUrl).then(function (response) {
+	                _this2.$data.api.list = response.data;
+	                return response.data;
+	            }).then(function (list) {
+	                var tmpList = list.slice(0, _this2.$data.listNumber);
+	                tmpList.map(function (i) {
+	                    _this2.$http.get(itemUrl + i + '.json?print=pretty').then(function (response) {
+	                        _this2.$data.api.items.push(response.data);
+	                    });
+	                });
+	            });
+	        }
+	    },
+	    methods: {
+	        add: function add() {
+	            var _this3 = this;
+
+	            var i = this.$data.listNumber++;
+	            this.$http.get(itemUrl + this.$data.api.list[i] + '.json?print=pretty').then(function (response) {
+	                _this3.$data.api.items.push(response.data);
+	            });
+	        },
+	        scroll: function scroll(event) {
+	            var _this = event.target;
+	            var scrollTop = _this.scrollTop;
+	            var listHeight = document.querySelector(".hacker-article-list").scrollHeight;
+
+	            if (scrollTop + window.screen.height + this.$data.def >= listHeight) {
+	                this.add();
+	            }
+	        }
+	    },
+	    components: {
+	        "articleitem": _articleitem2.default
+	    },
+	    beforeCompile: function beforeCompile() {
+	        this.$data.listNumber = Math.ceil(window.innerHeight / 100);
 	    }
 	};
 
@@ -29565,7 +29841,7 @@
 /* 148 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"jobsContent\" >\n</div>\n";
+	module.exports = "\n<div id=\"jobsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\" v-show=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' -1\" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ },
 /* 149 */
@@ -29663,7 +29939,7 @@
 /* 151 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"contentContent\">\n    <div class=\"article-content\">\n        <div class=\"entry\">\n            <header>\n                <div class=\"info-wrapper\">\n                    <h2 class=\"article-list-title\">\n                        <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"item.title\">{{item.title}}</a>\n                        <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"!item.title\">{{item.type}}</a>\n                    </h2>\n                    <div class=\"article-meta\">\n                        <span class=\"article-time\" datetime=\"\" v-show=\"item.score\">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>\n                        <span class=\"article-tags\">\n                            <a class=\"tag\" v-link=\"{path:'/contents?id='+item.id}\">{{item.time | momentFromNow}}</a>\n                            <a class=\"tag\" v-link=\"{path:'/users?id='+item.by}\">{{item.by}}</a>\n                        </span>\n                    </div>\n                </div>\n            </header>\n            <section class=\"article-excerpt\">{{item.text | excerpt '50'}}\n            </section>\n            <footer>\n                <div class=\"article-goback\">\n                    <a v-link=\"'/index'\" title=\"GO BACK\">« GOBACK</a>\n                </div>\n                <div class=\"article-readmore\">\n                    <a href=\"{{item.url}}\" title=\"READ MORE\">READ ORIGNAL »</a>\n                </div>\n            </footer>\n        </div>\n    </div>\n    <!-- Footer -->\n    <footer class=\"hacker-footer clearfix \">\n        <section class=\"copyright\"><a href=\"\">{{copyright}}</a></section>\n        <section>Designed by <a href=\"authorurl\"><span>@<span>{{author}}</a>with<a href=\"toolurl\">{{tool}}</a>\n        </section>\n        <section class=\"poweredby \">Theme by<a href=\"repourl\">{{repo}}</a></section>\n    </footer>\n\n</div>\n";
+	module.exports = "\n<div id=\"contentContent\">\n    <div class=\"article-content\">\n        <div class=\"entry\">\n            <header>\n                <div class=\"info-wrapper\">\n                    <h2 class=\"article-list-title\">\n                        <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"item.title\">{{item.title}}</a>\n                        <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"!item.title\">{{item.type}}</a>\n                    </h2>\n                    <div class=\"article-meta\">\n                        <span class=\"article-time\" datetime=\"\" v-show=\"item.score\">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>\n                        <span class=\"article-tags\">\n                            <a class=\"tag\" v-link=\"{path:'/contents?id='+item.id}\">{{item.time | momentFromNow}}</a>\n                            <a class=\"tag\" v-link=\"{path:'/users?id='+item.by}\">{{item.by}}</a>\n                        </span>\n                    </div>\n                </div>\n            </header>\n            <section class=\"article-excerpt\">{{item.text | excerpt '50'}}\n            </section>\n            <footer>\n                <div class=\"article-goback\">\n                    <a v-link=\"'/index'\" title=\"GO BACK\">« GOBACK</a>\n                </div>\n                <div class=\"article-readmore\" v-show=\"item.url\">\n                    <a href=\"{{item.url}}\" title=\"READ MORE\">READ ORIGNAL »</a>\n                </div>\n            </footer>\n        </div>\n    </div>\n    <!-- Footer -->\n    <footer class=\"hacker-footer clearfix \">\n        <section class=\"copyright\"><a href=\"\">{{copyright}}</a></section>\n        <section>Designed by <a href=\"authorurl\"><span>@<span>{{author}}</a>with<a href=\"toolurl\">{{tool}}</a>\n        </section>\n        <section class=\"poweredby \">Theme by<a href=\"repourl\">{{repo}}</a></section>\n    </footer>\n\n</div>\n";
 
 /***/ },
 /* 152 */
@@ -29963,7 +30239,7 @@
 /* 160 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"newsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' \" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
+	module.exports = "\n<div id=\"newsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' -1\" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ }
 /******/ ]);

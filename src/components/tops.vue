@@ -1,10 +1,10 @@
 <template>
-    <div id="newsContent"
+    <div id="topsContent"
             v-bind:style="{overflow:'auto',height:'100%'}"
             v-on:scroll="scroll($event)">
-        <div class="headerText">{{headerText}}</div>
+        <div class="headerText" v-show="headerText">{{headerText}}</div>
         <div class="hacker-article-list" >
-            <articleitem v-for="item in api.items | orderBy 'time' -1" :item="item"></articleitem>
+            <articleitem v-for="item in api.items | orderBy 'score' -1" :item="item"></articleitem>
         </div>
     </div>
 </template>
@@ -12,18 +12,19 @@
     import articleitem from "./articleitem.vue";
     import moment from "moment";
 
-    const userUrl = "https://hacker-news.firebaseio.com/v0/user/";
+
+    const baseUrl = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
     const itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
 
 
     export default {
-        name: "news",
+        name: "tops",
         el: function(){
-            return "#newsContent";
+            return "#topsContent";
         },
         data: function() {
             return {
-                headerText: "",
+                headerText: "topstories",
                 api: {
                     list: [],
                     items: []
@@ -36,13 +37,10 @@
         },
         route: {
             data: function() {
-                const query=this.$route.query;
-                const id = query.id;
-                this.$data.headerText = id + "\'"+ "submissions";
-                this.$http.get(userUrl + id + '.json?print=pretty')
+                this.$http.get(baseUrl)
                     .then((response) => {
-                        this.$data.api.list = response.data.submitted;
-                        return response.data.submitted;
+                        this.$data.api.list = response.data;
+                        return response.data;
                     })
                     .then((list) => {
                         let tmpList = list.slice(0,this.$data.listNumber);

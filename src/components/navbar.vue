@@ -26,7 +26,7 @@
                         id:0
                     },
                     {
-                        name:"comments",
+                        name:"top",
                         id:1
                     },
                     {

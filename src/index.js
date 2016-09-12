@@ -3,7 +3,7 @@ import Router from "vue-router";
 import Resource from "vue-resource";
 import app from "./components/app.vue";
 import news from "./components/news.vue";
-import comments from "./components/comments.vue";
+import tops from "./components/tops.vue";
 import shows from "./components/shows.vue";
 import asks from "./components/asks.vue";
 import jobs from "./components/jobs.vue";
@@ -21,8 +21,8 @@ router.map({
     '/new':{
         component:news
     },
-    '/comments':{
-        component:comments
+    '/top':{
+        component:tops
     },
     '/show':{
         component:shows
