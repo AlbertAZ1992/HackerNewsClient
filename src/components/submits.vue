@@ -2,7 +2,7 @@
     <div id="newsContent"
             v-bind:style="{overflow:'auto',height:'100%'}"
             v-on:scroll="scroll($event)">
-        <div class="headerText" v-show="headerText">{{headerText}}</div>
+        <div class="headerText">{{headerText}}</div>
         <div class="hacker-article-list" >
             <articleitem v-for="item in api.items | orderBy 'time' " :item="item"></articleitem>
         </div>
@@ -12,8 +12,7 @@
     import articleitem from "./articleitem.vue";
     import moment from "moment";
 
-
-    const baseUrl = "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty";
+    const userUrl = "https://hacker-news.firebaseio.com/v0/user/";
     const itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
 
 
@@ -24,7 +23,7 @@
         },
         data: function() {
             return {
-                headerText: "newstories",
+                headerText: "",
                 api: {
                     list: [],
                     items: []
@@ -37,10 +36,13 @@
         },
         route: {
             data: function() {
-                this.$http.get(baseUrl)
+                const query=this.$route.query;
+                const id = query.id;
+                this.$data.headerText = id + "\'"+ "submissions";
+                this.$http.get(userUrl + id + '.json?print=pretty')
                     .then((response) => {
-                        this.$data.api.list = response.data;
-                        return response.data;
+                        this.$data.api.list = response.data.submitted;
+                        return response.data.submitted;
                     })
                     .then((list) => {
                         let tmpList = list.slice(0,this.$data.listNumber);

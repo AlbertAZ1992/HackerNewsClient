@@ -3,7 +3,8 @@
         <header>
             <div class="info-wrapper">
                 <h2 class="article-list-title">
-                    <a href="{{item.url}}">{{item.title}}</a>
+                    <a v-link="{path:'/contents?id='+item.id}" v-show="item.title">{{item.title}}</a>
+                    <a v-link="{path:'/contents?id='+item.id}" v-show="!item.title">{{item.type}}</a>
                 </h2>
                 <div class="article-meta">
                     <span class="article-time" datetime="">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>

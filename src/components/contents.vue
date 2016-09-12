@@ -5,13 +5,14 @@
                 <header>
                     <div class="info-wrapper">
                         <h2 class="article-list-title">
-                            <a href="{{item.url}}">{{item.title}}</a>
+                            <a v-link="{path:'/contents?id='+item.id}" v-show="item.title">{{item.title}}</a>
+                            <a v-link="{path:'/contents?id='+item.id}" v-show="!item.title">{{item.type}}</a>
                         </h2>
                         <div class="article-meta">
-                            <span class="article-time" datetime="">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>
+                            <span class="article-time" datetime="" v-show="item.score">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>
                             <span class="article-tags">
                                 <a class="tag" v-link="{path:'/contents?id='+item.id}">{{item.time | momentFromNow}}</a>
-                                <a class="tag" href="">{{item.by}}</a>
+                                <a class="tag" v-link="{path:'/users?id='+item.by}">{{item.by}}</a>
                             </span>
                         </div>
                     </div>
@@ -21,6 +22,9 @@
                 <footer>
                     <div class="article-goback">
                         <a v-link="'/index'" title="GO BACK">« GOBACK</a>
+                    </div>
+                    <div class="article-readmore" v-show="item.url">
+                        <a href="{{item.url}}" title="READ MORE">READ ORIGNAL »</a>
                     </div>
                 </footer>
             </div>

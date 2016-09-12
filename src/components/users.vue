@@ -1,30 +1,6 @@
 <template>
     <div id="usersContent">
-        <div class="article-content">
-            <div class="entry">
-                <header>
-                    <div class="info-wrapper">
-                        <h2 class="article-list-title">
-                            <a v-link="{path:'/users?by='+item.id}">{{item.id}}</a>
-                        </h2>
-                        <div class="article-meta">
-                            <span class="article-time" datetime="">karma: {{item.karma}} </span>
-                            <span class="article-time" datetime="">created: {{item.created | momentFromNow}}</span>
-                            <span class="article-tags">
-                                <a class="tag">{{item.id}}'s submissions</a>
-                            </span>
-                        </div>
-                    </div>
-                </header>
-                <section class="article-excerpt">{{item.about | excerpt '50'}}
-                </section>
-                <footer>
-                    <div class="article-goback">
-                        <a v-link="'/index'" title="GO BACK">« GOBACK</a>
-                    </div>
-                </footer>
-            </div>
-        </div>
+        <useritem :item="item"></useritem>
         <!-- Footer -->
         <footer class="hacker-footer clearfix ">
             <section class="copyright"><a href="">{{copyright}}</a></section>
@@ -36,6 +12,7 @@
     </div>
 </template>
 <script>
+    import useritem from "./useritem.vue";
     import moment from "moment";
     const userUrl = "https://hacker-news.firebaseio.com/v0/user/";
     export default{
@@ -53,7 +30,6 @@
                 toolurl: "https://github.com/HackerNews/API",
                 repo: "",
                 repourl: "https://github.com/Deacyn/hexo-theme-hacker"
-
             }
         },
         route:{
@@ -65,6 +41,9 @@
                         this.$data.item = response.data;
                 });
             }
+        },
+        components: {
+            "useritem": useritem
         },
         filters: {
             moment: function (value, formatString) {

@@ -82,29 +82,33 @@
 
 	var _news2 = _interopRequireDefault(_news);
 
-	var _comments = __webpack_require__(138);
+	var _comments = __webpack_require__(137);
 
 	var _comments2 = _interopRequireDefault(_comments);
 
-	var _shows = __webpack_require__(141);
+	var _shows = __webpack_require__(140);
 
 	var _shows2 = _interopRequireDefault(_shows);
 
-	var _asks = __webpack_require__(144);
+	var _asks = __webpack_require__(143);
 
 	var _asks2 = _interopRequireDefault(_asks);
 
-	var _jobs = __webpack_require__(147);
+	var _jobs = __webpack_require__(146);
 
 	var _jobs2 = _interopRequireDefault(_jobs);
 
-	var _contents = __webpack_require__(150);
+	var _contents = __webpack_require__(149);
 
 	var _contents2 = _interopRequireDefault(_contents);
 
-	var _users = __webpack_require__(153);
+	var _users = __webpack_require__(152);
 
 	var _users2 = _interopRequireDefault(_users);
+
+	var _submits = __webpack_require__(158);
+
+	var _submits2 = _interopRequireDefault(_submits);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -135,6 +139,9 @@
 	    },
 	    '/users': {
 	        component: _users2.default
+	    },
+	    '/submits': {
+	        component: _submits2.default
 	    }
 	});
 
@@ -14700,7 +14707,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: Adamcg;\n  src: url(" + __webpack_require__(19) + ");\n}\n.clearfix {\n  zoom: 1;\n}\n.clearfix:after {\n  content: \"\";\n  display: block;\n  clear: both;\n}\n* {\n  box-sizing: border-box;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n}\nhtml {\n  font-size: 62.5%;\n}\nbody {\n  font-family: monospace,\n        serif;\n  margin: 0;\n  font-size: 1.6rem;\n  color: #595959;\n  background: url(" + __webpack_require__(20) + ") repeat;\n}\narticle {\n  overflow-x: hidden;\n}\nul,\nol,\ndl {\n  line-height: 1;\n}\na {\n  text-decoration: none;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n  outline: none;\n}\na:hover,\na:active {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\na:link,\na:visited {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 700;\n}\nh1 {\n  font-size: 4.8rem;\n}\nh2 {\n  font-size: 3.2rem;\n}\nh3 {\n  font-size: 2.4rem;\n}\nh4 {\n  font-size: 2rem;\n}\nh5 {\n  font-size: 1.6rem;\n}\nh6 {\n  font-size: 1.4rem;\n}\n@media screen and (max-width: 767px) {\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 0.2rem !important;\n    font-size: 1.6rem !important;\n  }\n  .hacker-article-list .hacker-article-item.txt {\n    position: relative;\n    width: 100%;\n    margin: 0 auto;\n  }\n  .hacker-article-list .hacker-article-item.txt .info-wrapper .article-meta .article-time {\n    display: block;\n    margin: 6rem 0;\n  }\n  .hacker-article-list .hacker-article-item.txt .info-wrapper .article-meta .article-tags {\n    display: block;\n  }\n  .article-content {\n    width: 90%;\n  }\n}\n@media screen and (min-width: 767px) and (max-width: 1199px) {\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 1rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 1199px) {\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 1rem !important;\n    font-size: 1.6rem !important;\n  }\n  #contentContainer {\n    margin: 6rem 0 0 0;\n  }\n}\n.hacker-navbar.index,\n.hacker-navbar.post {\n  z-index: 10;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.post .navbar-brand {\n  margin: 1rem;\n  padding: 0 2rem;\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-brand:hover,\n.hacker-navbar.post .navbar-brand:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-nav,\n.hacker-navbar.post .navbar-nav {\n  margin: 1rem;\n  padding: 0 2rem;\n}\n.hacker-navbar.index .navbar-nav li,\n.hacker-navbar.post .navbar-nav li {\n  padding: 0 0.4rem;\n  display: inline-block;\n}\n.hacker-navbar.index .navbar-nav li a,\n.hacker-navbar.post .navbar-nav li a {\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-nav li a:hover,\n.hacker-navbar.post .navbar-nav li a:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.index .navbar-nav a {\n  color: #333;\n}\n.hacker-navbar.post .navbar-brand,\n.hacker-navbar.post .navbar-nav a {\n  color: #fff;\n}\n.hacker-navbar.normal-mode {\n  position: absolute;\n  top: 0;\n  left: 0;\n  border: none;\n  background: url(" + __webpack_require__(20) + ") repeat;\n}\n.hacker-navbar.top-mode {\n  position: fixed;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n}\n.hacker-navbar.top-mode .navbar-brand {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-brand:hover {\n  color: #fff;\n  background: none;\n}\n.hacker-navbar.top-mode .navbar-nav li a {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-nav li a:hover {\n  color: #fff;\n  background: none;\n}\n.navbar-fixed-top {\n  position: fixed;\n  right: 0;\n  left: 0;\n  top: 0;\n  z-index: 1000;\n}\n.navbar-right {\n  float: right !important;\n}\n.header-nav {\n  margin: 4rem 0;\n  padding: 2rem 0;\n  text-align: center;\n  background: url(" + __webpack_require__(20) + ") repeat;\n  border-bottom: 0.3rem dotted #bfbfbf;\n}\n.header-nav a {\n  padding: 0.5rem;\n  display: inline-block;\n  border-radius: 1rem;\n  text-align: center;\n  background: rgba(255, 255, 255, 0.15);\n  color: #333;\n  margin: 2rem;\n  height: 3.2rem;\n  font-size: 1.8rem;\n  font-weight: 700;\n  line-height: 2;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n}\n.header-nav .header-nav-tag-0 {\n  border: 2px solid #79D9CF;\n}\n.header-nav .header-nav-tag-0:hover {\n  background: #79D9CF;\n  color: #fff;\n}\n.header-nav .header-nav-tag-1 {\n  border: 2px solid #F2D649;\n}\n.header-nav .header-nav-tag-1:hover {\n  background: #F2D649;\n  color: #fff;\n}\n.header-nav .header-nav-tag-2 {\n  border: 2px solid #89CF99;\n}\n.header-nav .header-nav-tag-2:hover {\n  background: #89CF99;\n  color: #fff;\n}\n.header-nav .header-nav-tag-3 {\n  border: 2px solid #4C9DA0;\n}\n.header-nav .header-nav-tag-3:hover {\n  background: #4C9DA0;\n  color: #fff;\n}\n.header-nav .header-nav-tag-4 {\n  border: 2px solid #fa4786;\n}\n.header-nav .header-nav-tag-4:hover {\n  background: #fa4786;\n  color: #fff;\n}\n.hacker-article-list .txt {\n  position: relative;\n  width: 80%;\n  margin: 4rem auto;\n}\n.hacker-article-list .txt .info-wrapper {\n  width: 100%;\n  padding: 2rem;\n}\n.hacker-article-list .txt .info-wrapper .article-list-title {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 6rem 0;\n}\n.hacker-article-list .txt .info-wrapper .article-list-title a {\n  color: #333;\n}\n.hacker-article-list .txt .info-wrapper .article-list-title a:hover {\n  color: #3dd179;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-time {\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  color: #333;\n  font-size: 2rem;\n  display: inline-block;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-tags {\n  display: inline-block;\n  text-align: left;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-tags a {\n  display: inline-block;\n  margin: 0.5rem 1.5rem 0 0;\n  padding: 0 1.5rem;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  line-height: 2rem;\n  color: #333;\n  background: rgba(79, 212, 141, 0.2);\n  border-radius: 0.3rem;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-tags a:hover {\n  color: #fff;\n  background: #3dd179;\n}\n.hacker-article-list .txt .article-excerpt {\n  padding: 0 2rem;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 200;\n}\n.hacker-article-list .txt .article-readmore {\n  width: 100%;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  background: none;\n  text-align: center;\n  margin: 2rem 0;\n}\n.hacker-article-list .txt .article-readmore a {\n  display: inline-block;\n  color: #333;\n  line-height: 2;\n  padding: 0 1.5rem;\n  border-radius: 0.3rem;\n}\n.hacker-article-list .txt .article-readmore a:hover {\n  color: #fff;\n  background: #3dd179;\n  letter-spacing: 0.2em;\n}\n.article-content {\n  width: 95%;\n  margin: 8rem auto;\n  padding: 3rem;\n  position: relative;\n  z-index: 1;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n}\n.article-content .info-wrapper {\n  width: 100%;\n  padding: 2rem;\n}\n.article-content .info-wrapper .article-list-title {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 6rem 0;\n}\n.article-content .info-wrapper .article-list-title a {\n  color: #333;\n}\n.article-content .info-wrapper .article-list-title a:hover {\n  color: #3dd179;\n}\n.article-content .info-wrapper .article-meta .article-time {\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  color: #333;\n  font-size: 2rem;\n  display: inline-block;\n}\n.article-content .info-wrapper .article-meta .article-tags {\n  display: inline-block;\n  text-align: left;\n}\n.article-content .info-wrapper .article-meta .article-tags a {\n  display: inline-block;\n  margin: 0.5rem 1.5rem 0 0;\n  padding: 0 1.5rem;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  line-height: 2rem;\n  color: #333;\n  background: rgba(79, 212, 141, 0.2);\n  border-radius: 0.3rem;\n}\n.article-content .info-wrapper .article-meta .article-tags a:hover {\n  color: #fff;\n  background: #3dd179;\n}\n.article-content .article-excerpt {\n  padding: 0 2rem;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 200;\n}\n.article-content .article-goback {\n  width: 100%;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  background: none;\n  text-align: center;\n  margin: 2rem 0;\n}\n.article-content .article-goback a {\n  display: inline-block;\n  color: #333;\n  line-height: 2;\n  padding: 0 1.5rem;\n  border-radius: 0.3rem;\n}\n.article-content .article-goback a:hover {\n  color: #fff;\n  background: #3dd179;\n  letter-spacing: 0.2em;\n}\n.hacker-footer {\n  margin: 4rem 0;\n  width: 100%;\n  text-align: center;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 100;\n}\n.hacker-footer a {\n  color: #595959;\n}\n#usersContent .article-time,\n#usersContent .article-tags {\n  display: block;\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: Adamcg;\n  src: url(" + __webpack_require__(19) + ");\n}\n.clearfix {\n  zoom: 1;\n}\n.clearfix:after {\n  content: \"\";\n  display: block;\n  clear: both;\n}\n* {\n  box-sizing: border-box;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n}\nhtml {\n  font-size: 62.5%;\n}\nbody {\n  font-family: monospace,\n        serif;\n  margin: 0;\n  font-size: 1.6rem;\n  color: #595959;\n  background: url(" + __webpack_require__(20) + ") repeat;\n}\narticle {\n  overflow-x: hidden;\n}\nul,\nol,\ndl {\n  line-height: 1;\n}\na {\n  text-decoration: none;\n  -webkit-transition: all 0.3s ease-out;\n  transition: all 0.3s ease-out;\n  outline: none;\n}\na:hover,\na:active {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\na:link,\na:visited {\n  outline: none;\n  cursor: pointer;\n  text-decoration: none;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 700;\n}\nh1 {\n  font-size: 4.8rem;\n}\nh2 {\n  font-size: 3.2rem;\n}\nh3 {\n  font-size: 2.4rem;\n}\nh4 {\n  font-size: 2rem;\n}\nh5 {\n  font-size: 1.6rem;\n}\nh6 {\n  font-size: 1.4rem;\n}\n@media screen and (max-width: 767px) {\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 0.2rem !important;\n    font-size: 1.6rem !important;\n  }\n  .hacker-article-list .hacker-article-item.txt {\n    position: relative;\n    width: 100%;\n    margin: 0 auto;\n  }\n  .hacker-article-list .hacker-article-item.txt .info-wrapper .article-meta .article-time {\n    display: block;\n    margin: 6rem 0;\n  }\n  .hacker-article-list .hacker-article-item.txt .info-wrapper .article-meta .article-tags {\n    display: block;\n  }\n  .article-content {\n    width: 90%;\n  }\n}\n@media screen and (min-width: 767px) and (max-width: 1199px) {\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 1rem !important;\n    font-size: 1.6rem !important;\n  }\n}\n@media screen and (min-width: 1199px) {\n  .container-fluid {\n    text-align: center;\n    margin: 2rem 0;\n  }\n  .header-nav a {\n    margin: 1rem !important;\n    font-size: 1.6rem !important;\n  }\n  #contentContainer {\n    margin: 6rem 0 0 0;\n  }\n}\n.hacker-navbar.index,\n.hacker-navbar.post {\n  z-index: 10;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.post .navbar-brand {\n  margin: 1rem;\n  padding: 0 2rem;\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-brand:hover,\n.hacker-navbar.post .navbar-brand:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-nav,\n.hacker-navbar.post .navbar-nav {\n  margin: 1rem;\n  padding: 0 2rem;\n}\n.hacker-navbar.index .navbar-nav li,\n.hacker-navbar.post .navbar-nav li {\n  padding: 0 0.4rem;\n  display: inline-block;\n}\n.hacker-navbar.index .navbar-nav li a,\n.hacker-navbar.post .navbar-nav li a {\n  font-weight: 700;\n  font-size: 1.8rem;\n  line-height: 1;\n}\n.hacker-navbar.index .navbar-nav li a:hover,\n.hacker-navbar.post .navbar-nav li a:hover {\n  color: #3dd179;\n  background: none;\n}\n.hacker-navbar.index .navbar-brand,\n.hacker-navbar.index .navbar-nav a {\n  color: #333;\n}\n.hacker-navbar.post .navbar-brand,\n.hacker-navbar.post .navbar-nav a {\n  color: #fff;\n}\n.hacker-navbar.normal-mode {\n  position: absolute;\n  top: 0;\n  left: 0;\n  border: none;\n  background: url(" + __webpack_require__(20) + ") repeat;\n}\n.hacker-navbar.top-mode {\n  position: fixed;\n  top: 0;\n  left: 0;\n  border: none;\n  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);\n}\n.hacker-navbar.top-mode .navbar-brand {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-brand:hover {\n  color: #fff;\n  background: none;\n}\n.hacker-navbar.top-mode .navbar-nav li a {\n  color: rgba(255, 255, 255, 0.3);\n}\n.hacker-navbar.top-mode .navbar-nav li a:hover {\n  color: #fff;\n  background: none;\n}\n.navbar-fixed-top {\n  position: fixed;\n  right: 0;\n  left: 0;\n  top: 0;\n  z-index: 1000;\n}\n.navbar-right {\n  float: right !important;\n}\n.header-nav {\n  margin: 4rem 0;\n  padding: 2rem 0;\n  text-align: center;\n  background: url(" + __webpack_require__(20) + ") repeat;\n  border-bottom: 0.3rem dotted #bfbfbf;\n}\n.header-nav a {\n  padding: 0.5rem;\n  display: inline-block;\n  border-radius: 1rem;\n  text-align: center;\n  background: rgba(255, 255, 255, 0.15);\n  color: #333;\n  margin: 2rem;\n  height: 3.2rem;\n  font-size: 1.8rem;\n  font-weight: 700;\n  line-height: 2;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n}\n.header-nav .header-nav-tag-0 {\n  border: 2px solid #79D9CF;\n}\n.header-nav .header-nav-tag-0:hover {\n  background: #79D9CF;\n  color: #fff;\n}\n.header-nav .header-nav-tag-1 {\n  border: 2px solid #F2D649;\n}\n.header-nav .header-nav-tag-1:hover {\n  background: #F2D649;\n  color: #fff;\n}\n.header-nav .header-nav-tag-2 {\n  border: 2px solid #89CF99;\n}\n.header-nav .header-nav-tag-2:hover {\n  background: #89CF99;\n  color: #fff;\n}\n.header-nav .header-nav-tag-3 {\n  border: 2px solid #4C9DA0;\n}\n.header-nav .header-nav-tag-3:hover {\n  background: #4C9DA0;\n  color: #fff;\n}\n.header-nav .header-nav-tag-4 {\n  border: 2px solid #fa4786;\n}\n.header-nav .header-nav-tag-4:hover {\n  background: #fa4786;\n  color: #fff;\n}\n.hacker-article-list .txt {\n  position: relative;\n  width: 80%;\n  margin: 4rem auto;\n}\n.hacker-article-list .txt .info-wrapper {\n  width: 100%;\n  padding: 2rem;\n}\n.hacker-article-list .txt .info-wrapper .article-list-title {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 6rem 0;\n}\n.hacker-article-list .txt .info-wrapper .article-list-title a {\n  color: #333;\n}\n.hacker-article-list .txt .info-wrapper .article-list-title a:hover {\n  color: #3dd179;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-time {\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  color: #333;\n  font-size: 2rem;\n  display: inline-block;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-tags {\n  display: inline-block;\n  text-align: left;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-tags a {\n  display: inline-block;\n  margin: 0.5rem 1.5rem 0 0;\n  padding: 0 1.5rem;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  line-height: 2rem;\n  color: #333;\n  background: rgba(79, 212, 141, 0.2);\n  border-radius: 0.3rem;\n}\n.hacker-article-list .txt .info-wrapper .article-meta .article-tags a:hover {\n  color: #fff;\n  background: #3dd179;\n}\n.hacker-article-list .txt .article-excerpt {\n  padding: 0 2rem;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 200;\n}\n.hacker-article-list .txt .article-readmore {\n  width: 100%;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  background: none;\n  text-align: center;\n  margin: 2rem 0;\n}\n.hacker-article-list .txt .article-readmore a {\n  display: inline-block;\n  color: #333;\n  line-height: 2;\n  padding: 0 1.5rem;\n  border-radius: 0.3rem;\n}\n.hacker-article-list .txt .article-readmore a:hover {\n  color: #fff;\n  background: #3dd179;\n  letter-spacing: 0.2em;\n}\n.headerText {\n  width: 100%;\n  padding: 2rem;\n  text-align: center;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 0;\n  color: #595959;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n}\n.article-content {\n  width: 95%;\n  margin: 8rem auto;\n  padding: 3rem;\n  position: relative;\n  z-index: 1;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n}\n.article-content .info-wrapper {\n  width: 100%;\n  padding: 2rem;\n}\n.article-content .info-wrapper .article-list-title {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 6rem 0;\n}\n.article-content .info-wrapper .article-list-title a {\n  color: #333;\n}\n.article-content .info-wrapper .article-list-title a:hover {\n  color: #3dd179;\n}\n.article-content .info-wrapper .article-meta .article-time {\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  color: #333;\n  font-size: 2rem;\n  display: inline-block;\n}\n.article-content .info-wrapper .article-meta .article-tags {\n  display: inline-block;\n  text-align: left;\n}\n.article-content .info-wrapper .article-meta .article-tags a {\n  display: inline-block;\n  margin: 0.5rem 1.5rem 0 0;\n  padding: 0 1.5rem;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  line-height: 2rem;\n  color: #333;\n  background: rgba(79, 212, 141, 0.2);\n  border-radius: 0.3rem;\n}\n.article-content .info-wrapper .article-meta .article-tags a:hover {\n  color: #fff;\n  background: #3dd179;\n}\n.article-content .article-excerpt {\n  padding: 0 2rem;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 200;\n}\n.article-content .article-readmore,\n.article-content .article-goback {\n  width: 100%;\n  font-family: Adamcg, \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-size: 2rem;\n  background: none;\n  text-align: center;\n  margin: 2rem 0;\n}\n.article-content .article-readmore a,\n.article-content .article-goback a {\n  display: inline-block;\n  color: #333;\n  line-height: 2;\n  padding: 0 1.5rem;\n  border-radius: 0.3rem;\n}\n.article-content .article-readmore a:hover,\n.article-content .article-goback a:hover {\n  color: #fff;\n  background: #3dd179;\n  letter-spacing: 0.2em;\n}\n.hacker-footer {\n  margin: 4rem 0;\n  width: 100%;\n  text-align: center;\n  font-family: \"PingFang SC\", \"Hiragino Sans GB\", 'Helvetica Neue', \"Microsoft YaHei\", \"Source Han Sans SC\", Arial, sans-serif;\n  font-weight: 100;\n}\n.hacker-footer a {\n  color: #595959;\n}\n#usersContent .article-time,\n#usersContent .article-tags {\n  display: block;\n}\n", ""]);
 
 	// exports
 
@@ -15129,7 +15136,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/news.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(137)
+	__vue_template__ = __webpack_require__(136)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15165,14 +15172,6 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _vue = __webpack_require__(11);
-
-	var _vue2 = _interopRequireDefault(_vue);
-
-	var _vueInfiniteScroll = __webpack_require__(136);
-
-	var _vueInfiniteScroll2 = _interopRequireDefault(_vueInfiniteScroll);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var baseUrl = "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty";
@@ -15185,12 +15184,11 @@
 	    },
 	    data: function data() {
 	        return {
-	            msg: "article",
+	            headerText: "newstories",
 	            api: {
 	                list: [],
 	                items: []
 	            },
-	            title: "NEW STORIES",
 	            listNumber: 0,
 	            listHeight: 0,
 	            def: 100
@@ -15203,7 +15201,7 @@
 
 	            this.$http.get(baseUrl).then(function (response) {
 	                _this2.$data.api.list = response.data;
-	                return response.json();
+	                return response.data;
 	            }).then(function (list) {
 	                var tmpList = list.slice(0, _this2.$data.listNumber);
 	                tmpList.map(function (i) {
@@ -29361,244 +29359,25 @@
 /* 135 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<article id=\"articleitemContent\" class=\"hacker-article-item txt\" v-link=\"\" >\n    <header>\n        <div class=\"info-wrapper\">\n            <h2 class=\"article-list-title\">\n                <a href=\"{{item.url}}\">{{item.title}}</a>\n            </h2>\n            <div class=\"article-meta\">\n                <span class=\"article-time\" datetime=\"\">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>\n                <span class=\"article-tags\">\n                    <a class=\"tag\" v-link=\"{path:'/contents?id='+item.id}\">{{item.time | momentFromNow}}</a>\n                    <a class=\"tag\" v-link=\"{path:'/users?id='+item.by}\">{{item.by}}</a>\n                </span>\n            </div>\n        </div>\n    </header>\n    <section class=\"article-excerpt\">{{item.text | excerpt '50'}}\n    </section>\n    <footer>\n        <div class=\"article-readmore\">\n            <a v-link=\"{path:'/contents?id='+item.id}\" title=\"READ MORE\">READ MORE »</a>\n        </div>\n    </footer>\n</article>\n";
+	module.exports = "\n<article id=\"articleitemContent\" class=\"hacker-article-item txt\" v-link=\"\" >\n    <header>\n        <div class=\"info-wrapper\">\n            <h2 class=\"article-list-title\">\n                <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"item.title\">{{item.title}}</a>\n                <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"!item.title\">{{item.type}}</a>\n            </h2>\n            <div class=\"article-meta\">\n                <span class=\"article-time\" datetime=\"\">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>\n                <span class=\"article-tags\">\n                    <a class=\"tag\" v-link=\"{path:'/contents?id='+item.id}\">{{item.time | momentFromNow}}</a>\n                    <a class=\"tag\" v-link=\"{path:'/users?id='+item.by}\">{{item.by}}</a>\n                </span>\n            </div>\n        </div>\n    </header>\n    <section class=\"article-excerpt\">{{item.text | excerpt '50'}}\n    </section>\n    <footer>\n        <div class=\"article-readmore\">\n            <a v-link=\"{path:'/contents?id='+item.id}\" title=\"READ MORE\">READ MORE »</a>\n        </div>\n    </footer>\n</article>\n";
 
 /***/ },
 /* 136 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	(function (global, factory) {
-	   true ? factory(exports) :
-	  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	  (factory((global.infiniteScroll = global.infiniteScroll || {})));
-	}(this, function (exports) { 'use strict';
-
-	  var throttle = function throttle(fn, delay) {
-	    var now, lastExec, timer, context, args; //eslint-disable-line
-
-	    var execute = function execute() {
-	      fn.apply(context, args);
-	      lastExec = now;
-	    };
-
-	    return function () {
-	      context = this;
-	      args = arguments;
-
-	      now = Date.now();
-
-	      if (timer) {
-	        clearTimeout(timer);
-	        timer = null;
-	      }
-
-	      if (lastExec) {
-	        var diff = delay - (now - lastExec);
-	        if (diff < 0) {
-	          execute();
-	        } else {
-	          timer = setTimeout(function () {
-	            execute();
-	          }, diff);
-	        }
-	      } else {
-	        execute();
-	      }
-	    };
-	  };
-
-	  var getScrollTop = function getScrollTop(element) {
-	    if (element === window) {
-	      return Math.max(window.pageYOffset || 0, document.documentElement.scrollTop);
-	    }
-
-	    return element.scrollTop;
-	  };
-
-	  var getComputedStyle = document.defaultView.getComputedStyle;
-
-	  var getScrollEventTarget = function getScrollEventTarget(element) {
-	    var currentNode = element;
-	    // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
-	    while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
-	      var overflowY = getComputedStyle(currentNode).overflowY;
-	      if (overflowY === 'scroll' || overflowY === 'auto') {
-	        return currentNode;
-	      }
-	      currentNode = currentNode.parentNode;
-	    }
-	    return window;
-	  };
-
-	  var getVisibleHeight = function getVisibleHeight(element) {
-	    if (element === window) {
-	      return document.documentElement.clientHeight;
-	    }
-
-	    return element.clientHeight;
-	  };
-
-	  var getElementTop = function getElementTop(element) {
-	    if (element === window) {
-	      return getScrollTop(window);
-	    }
-	    return element.getBoundingClientRect().top + getScrollTop(window);
-	  };
-
-	  var isAttached = function isAttached(element) {
-	    var currentNode = element.parentNode;
-	    while (currentNode) {
-	      if (currentNode.tagName === 'HTML') {
-	        return true;
-	      }
-	      if (currentNode.nodeType === 11) {
-	        return false;
-	      }
-	      currentNode = currentNode.parentNode;
-	    }
-	    return false;
-	  };
-
-	  var infiniteScroll = {
-	    doBind: function doBind() {
-	      if (this.binded) return; // eslint-disable-line
-	      this.binded = true;
-
-	      var directive = this;
-	      var element = directive.el;
-
-	      directive.scrollEventTarget = getScrollEventTarget(element);
-	      directive.scrollListener = throttle(directive.doCheck.bind(directive), 200);
-	      directive.scrollEventTarget.addEventListener('scroll', directive.scrollListener);
-
-	      var disabledExpr = element.getAttribute('infinite-scroll-disabled');
-	      var disabled = false;
-
-	      if (disabledExpr) {
-	        this.vm.$watch(disabledExpr, function (value) {
-	          directive.disabled = value;
-	          if (!value && directive.immediateCheck) {
-	            directive.doCheck();
-	          }
-	        });
-	        disabled = Boolean(directive.vm.$get(disabledExpr));
-	      }
-	      directive.disabled = disabled;
-
-	      var distanceExpr = element.getAttribute('infinite-scroll-distance');
-	      var distance = 0;
-	      if (distanceExpr) {
-	        distance = Number(directive.vm.$get(distanceExpr));
-	        if (isNaN(distance)) {
-	          distance = 0;
-	        }
-	      }
-	      directive.distance = distance;
-
-	      var immediateCheckExpr = element.getAttribute('infinite-scroll-immediate-check');
-	      var immediateCheck = true;
-	      if (immediateCheckExpr) {
-	        immediateCheck = Boolean(directive.vm.$get(immediateCheckExpr));
-	      }
-	      directive.immediateCheck = immediateCheck;
-
-	      if (immediateCheck) {
-	        directive.doCheck();
-	      }
-
-	      var eventName = element.getAttribute('infinite-scroll-listen-for-event');
-	      if (eventName) {
-	        directive.vm.$on(eventName, function () {
-	          directive.doCheck();
-	        });
-	      }
-	    },
-
-	    doCheck: function doCheck(force) {
-	      var scrollEventTarget = this.scrollEventTarget;
-	      var element = this.el;
-	      var distance = this.distance;
-
-	      if (force !== true && this.disabled) return; //eslint-disable-line
-	      var viewportScrollTop = getScrollTop(scrollEventTarget);
-	      var viewportBottom = viewportScrollTop + getVisibleHeight(scrollEventTarget);
-
-	      var shouldTrigger = false;
-
-	      if (scrollEventTarget === element) {
-	        shouldTrigger = scrollEventTarget.scrollHeight - viewportBottom <= distance;
-	      } else {
-	        var elementBottom = getElementTop(element) - getElementTop(scrollEventTarget) + element.offsetHeight + viewportScrollTop;
-
-	        shouldTrigger = viewportBottom + distance >= elementBottom;
-	      }
-
-	      if (shouldTrigger && this.expression) {
-	        this.vm.$get(this.expression);
-	      }
-	    },
-
-	    bind: function bind() {
-	      var directive = this;
-	      var element = this.el;
-
-	      directive.vm.$on('hook:ready', function () {
-	        if (isAttached(element)) {
-	          directive.doBind();
-	        }
-	      });
-
-	      this.bindTryCount = 0;
-
-	      var tryBind = function tryBind() {
-	        if (directive.bindTryCount > 10) return; //eslint-disable-line
-	        directive.bindTryCount++;
-	        if (isAttached(element)) {
-	          directive.doBind();
-	        } else {
-	          setTimeout(tryBind, 50);
-	        }
-	      };
-
-	      tryBind();
-	    },
-
-	    unbind: function unbind() {
-	      this.scrollEventTarget.removeEventListener('scroll', this.scrollListener);
-	    }
-	  };
-
-	  if (window.Vue) {
-	    window.infiniteScroll = infiniteScroll;
-	    Vue.use(install);
-	  }
-
-	  function install(Vue) {
-	    Vue.directive('infiniteScroll', infiniteScroll);
-	  }
-
-	  exports.install = install;
-	  exports.infiniteScroll = infiniteScroll;
-
-	}));
+	module.exports = "\n<div id=\"newsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\" v-show=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' \" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ },
 /* 137 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div id=\"newsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' \" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
-
-/***/ },
-/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(139)
+	__vue_script__ = __webpack_require__(138)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/comments.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(140)
+	__vue_template__ = __webpack_require__(139)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -29617,7 +29396,7 @@
 	})()}
 
 /***/ },
-/* 139 */
+/* 138 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29633,22 +29412,22 @@
 	};
 
 /***/ },
-/* 140 */
+/* 139 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"commentsContent\" >\n</div>\n";
 
 /***/ },
-/* 141 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(142)
+	__vue_script__ = __webpack_require__(141)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/shows.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(143)
+	__vue_template__ = __webpack_require__(142)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -29667,7 +29446,7 @@
 	})()}
 
 /***/ },
-/* 142 */
+/* 141 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29683,22 +29462,22 @@
 	};
 
 /***/ },
-/* 143 */
+/* 142 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"showsContent\" >\n</div>\n";
 
 /***/ },
-/* 144 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(145)
+	__vue_script__ = __webpack_require__(144)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/asks.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(146)
+	__vue_template__ = __webpack_require__(145)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -29717,7 +29496,7 @@
 	})()}
 
 /***/ },
-/* 145 */
+/* 144 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29733,22 +29512,22 @@
 	};
 
 /***/ },
-/* 146 */
+/* 145 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"newsContent\" >\n</div>\n";
 
 /***/ },
-/* 147 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(148)
+	__vue_script__ = __webpack_require__(147)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/jobs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(149)
+	__vue_template__ = __webpack_require__(148)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -29767,7 +29546,7 @@
 	})()}
 
 /***/ },
-/* 148 */
+/* 147 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29783,22 +29562,22 @@
 	};
 
 /***/ },
-/* 149 */
+/* 148 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"jobsContent\" >\n</div>\n";
 
 /***/ },
-/* 150 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(151)
+	__vue_script__ = __webpack_require__(150)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/contents.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(152)
+	__vue_template__ = __webpack_require__(151)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -29817,7 +29596,7 @@
 	})()}
 
 /***/ },
-/* 151 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29881,22 +29660,22 @@
 	};
 
 /***/ },
-/* 152 */
+/* 151 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"contentContent\">\n    <div class=\"article-content\">\n        <div class=\"entry\">\n            <header>\n                <div class=\"info-wrapper\">\n                    <h2 class=\"article-list-title\">\n                        <a href=\"{{item.url}}\">{{item.title}}</a>\n                    </h2>\n                    <div class=\"article-meta\">\n                        <span class=\"article-time\" datetime=\"\">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>\n                        <span class=\"article-tags\">\n                            <a class=\"tag\" v-link=\"{path:'/contents?id='+item.id}\">{{item.time | momentFromNow}}</a>\n                            <a class=\"tag\" href=\"\">{{item.by}}</a>\n                        </span>\n                    </div>\n                </div>\n            </header>\n            <section class=\"article-excerpt\">{{item.text | excerpt '50'}}\n            </section>\n            <footer>\n                <div class=\"article-goback\">\n                    <a v-link=\"'/index'\" title=\"GO BACK\">« GOBACK</a>\n                </div>\n            </footer>\n        </div>\n    </div>\n    <!-- Footer -->\n    <footer class=\"hacker-footer clearfix \">\n        <section class=\"copyright\"><a href=\"\">{{copyright}}</a></section>\n        <section>Designed by <a href=\"authorurl\"><span>@<span>{{author}}</a>with<a href=\"toolurl\">{{tool}}</a>\n        </section>\n        <section class=\"poweredby \">Theme by<a href=\"repourl\">{{repo}}</a></section>\n    </footer>\n\n</div>\n";
+	module.exports = "\n<div id=\"contentContent\">\n    <div class=\"article-content\">\n        <div class=\"entry\">\n            <header>\n                <div class=\"info-wrapper\">\n                    <h2 class=\"article-list-title\">\n                        <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"item.title\">{{item.title}}</a>\n                        <a v-link=\"{path:'/contents?id='+item.id}\" v-show=\"!item.title\">{{item.type}}</a>\n                    </h2>\n                    <div class=\"article-meta\">\n                        <span class=\"article-time\" datetime=\"\" v-show=\"item.score\">{{item.score}} {{ item.score > 1 ? 'points' : 'point' }}</span>\n                        <span class=\"article-tags\">\n                            <a class=\"tag\" v-link=\"{path:'/contents?id='+item.id}\">{{item.time | momentFromNow}}</a>\n                            <a class=\"tag\" v-link=\"{path:'/users?id='+item.by}\">{{item.by}}</a>\n                        </span>\n                    </div>\n                </div>\n            </header>\n            <section class=\"article-excerpt\">{{item.text | excerpt '50'}}\n            </section>\n            <footer>\n                <div class=\"article-goback\">\n                    <a v-link=\"'/index'\" title=\"GO BACK\">« GOBACK</a>\n                </div>\n                <div class=\"article-readmore\">\n                    <a href=\"{{item.url}}\" title=\"READ MORE\">READ ORIGNAL »</a>\n                </div>\n            </footer>\n        </div>\n    </div>\n    <!-- Footer -->\n    <footer class=\"hacker-footer clearfix \">\n        <section class=\"copyright\"><a href=\"\">{{copyright}}</a></section>\n        <section>Designed by <a href=\"authorurl\"><span>@<span>{{author}}</a>with<a href=\"toolurl\">{{tool}}</a>\n        </section>\n        <section class=\"poweredby \">Theme by<a href=\"repourl\">{{repo}}</a></section>\n    </footer>\n\n</div>\n";
 
 /***/ },
-/* 153 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(154)
+	__vue_script__ = __webpack_require__(153)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/users.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(155)
+	__vue_template__ = __webpack_require__(157)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -29915,7 +29694,7 @@
 	})()}
 
 /***/ },
-/* 154 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29923,6 +29702,10 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _useritem = __webpack_require__(154);
+
+	var _useritem2 = _interopRequireDefault(_useritem);
 
 	var _moment2 = __webpack_require__(31);
 
@@ -29946,7 +29729,6 @@
 	            toolurl: "https://github.com/HackerNews/API",
 	            repo: "",
 	            repourl: "https://github.com/Deacyn/hexo-theme-hacker"
-
 	        };
 	    },
 	    route: {
@@ -29959,6 +29741,9 @@
 	                _this.$data.item = response.data;
 	            });
 	        }
+	    },
+	    components: {
+	        "useritem": _useritem2.default
 	    },
 	    filters: {
 	        moment: function moment(value, formatString) {
@@ -29979,10 +29764,206 @@
 	};
 
 /***/ },
+/* 154 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(155)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/useritem.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(156)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./useritem.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
 /* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _moment2 = __webpack_require__(31);
+
+	var _moment3 = _interopRequireDefault(_moment2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    name: "useritem",
+	    el: function el() {
+	        return "#useritemContent";
+	    },
+	    props: ["item"],
+	    filters: {
+	        moment: function moment(value, formatString) {
+	            formatString = formatString || 'YYYY-MM-DD HH:mm:ss';
+	            return (0, _moment3.default)(value).format(formatString);
+	        },
+	        momentFromNow: function momentFromNow(value, formatString) {
+	            formatString = formatString || '"YYYY';
+	            return (0, _moment3.default)(value, formatString).fromNow();
+	        },
+	        excerpt: function excerpt() {
+	            var value = arguments.length <= 0 || arguments[0] === undefined ? "" : arguments[0];
+	            var formatString = arguments[1];
+
+	            return value.substr(0, Number(formatString));
+	        }
+	    }
+	};
+
+/***/ },
+/* 156 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"usersContent\">\n    <div class=\"article-content\">\n        <div class=\"entry\">\n            <header>\n                <div class=\"info-wrapper\">\n                    <h2 class=\"article-list-title\">\n                        <a v-link=\"{path:'/users?by='+item.id}\">{{item.id}}</a>\n                    </h2>\n                    <div class=\"article-meta\">\n                        <span class=\"article-time\" datetime=\"\">karma: {{item.karma}} </span>\n                        <span class=\"article-time\" datetime=\"\">created: {{item.created | momentFromNow}}</span>\n                        <span class=\"article-tags\">\n                            <a class=\"tag\">{{item.id}}'s submissions</a>\n                        </span>\n                    </div>\n                </div>\n            </header>\n            <section class=\"article-excerpt\">{{item.about | excerpt '50'}}\n            </section>\n            <footer>\n                <div class=\"article-goback\">\n                    <a v-link=\"'/index'\" title=\"GO BACK\">« GOBACK</a>\n                </div>\n            </footer>\n        </div>\n    </div>\n    <!-- Footer -->\n    <footer class=\"hacker-footer clearfix \">\n        <section class=\"copyright\"><a href=\"\">{{copyright}}</a></section>\n        <section>Designed by <a href=\"authorurl\"><span>@<span>{{author}}</a>with<a href=\"toolurl\">{{tool}}</a>\n        </section>\n        <section class=\"poweredby \">Theme by<a href=\"repourl\">{{repo}}</a></section>\n    </footer>\n\n</div>\n";
+	module.exports = "\n<div id=\"useritemContent\" class=\"article-content\">\n    <div class=\"entry\">\n        <header>\n            <div class=\"info-wrapper\">\n                <h2 class=\"article-list-title\">\n                    <a v-link=\"{path:'/users?id='+item.id}\">{{item.id}}</a>\n                </h2>\n                <div class=\"article-meta\">\n                    <span class=\"article-time\" datetime=\"\">karma: {{item.karma}} </span>\n                    <span class=\"article-time\" datetime=\"\">created: {{item.created | momentFromNow}}</span>\n                    <span class=\"article-tags\">\n                        <a v-link=\"{path:'/submits?id='+item.id}\" class=\"tag\">{{item.id}}'s submissions</a>\n                    </span>\n                </div>\n            </div>\n        </header>\n        <section class=\"article-excerpt\">{{item.about | excerpt '50'}}\n        </section>\n        <footer>\n            <div class=\"article-goback\">\n                <a v-link=\"'/index'\" title=\"GO BACK\">« GOBACK</a>\n            </div>\n        </footer>\n    </div>\n</div>\n\n";
+
+/***/ },
+/* 157 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"usersContent\">\n    <useritem :item=\"item\"></useritem>\n    <!-- Footer -->\n    <footer class=\"hacker-footer clearfix \">\n        <section class=\"copyright\"><a href=\"\">{{copyright}}</a></section>\n        <section>Designed by <a href=\"authorurl\"><span>@<span>{{author}}</a>with<a href=\"toolurl\">{{tool}}</a>\n        </section>\n        <section class=\"poweredby \">Theme by<a href=\"repourl\">{{repo}}</a></section>\n    </footer>\n\n</div>\n";
+
+/***/ },
+/* 158 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(159)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/submits.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(160)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./submits.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _articleitem = __webpack_require__(29);
+
+	var _articleitem2 = _interopRequireDefault(_articleitem);
+
+	var _moment = __webpack_require__(31);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var userUrl = "https://hacker-news.firebaseio.com/v0/user/";
+	var itemUrl = "https://hacker-news.firebaseio.com/v0/item/";
+
+	exports.default = {
+	    name: "news",
+	    el: function el() {
+	        return "#newsContent";
+	    },
+	    data: function data() {
+	        return {
+	            headerText: "",
+	            api: {
+	                list: [],
+	                items: []
+	            },
+	            listNumber: 0,
+	            listHeight: 0,
+	            def: 100
+
+	        };
+	    },
+	    route: {
+	        data: function data() {
+	            var _this2 = this;
+
+	            var query = this.$route.query;
+	            var id = query.id;
+	            this.$data.headerText = id + "\'" + "submissions";
+	            this.$http.get(userUrl + id + '.json?print=pretty').then(function (response) {
+	                _this2.$data.api.list = response.data.submitted;
+	                return response.data.submitted;
+	            }).then(function (list) {
+	                var tmpList = list.slice(0, _this2.$data.listNumber);
+	                tmpList.map(function (i) {
+	                    _this2.$http.get(itemUrl + i + '.json?print=pretty').then(function (response) {
+	                        _this2.$data.api.items.push(response.data);
+	                    });
+	                });
+	            });
+	        }
+	    },
+	    methods: {
+	        add: function add() {
+	            var _this3 = this;
+
+	            var i = this.$data.listNumber++;
+	            this.$http.get(itemUrl + this.$data.api.list[i] + '.json?print=pretty').then(function (response) {
+	                _this3.$data.api.items.push(response.data);
+	            });
+	        },
+	        scroll: function scroll(event) {
+	            var _this = event.target;
+	            var scrollTop = _this.scrollTop;
+	            var listHeight = document.querySelector(".hacker-article-list").scrollHeight;
+
+	            if (scrollTop + window.screen.height + this.$data.def >= listHeight) {
+	                this.add();
+	            }
+	        }
+	    },
+	    components: {
+	        "articleitem": _articleitem2.default
+	    },
+	    beforeCompile: function beforeCompile() {
+	        this.$data.listNumber = Math.ceil(window.innerHeight / 100);
+	    }
+	};
+
+/***/ },
+/* 160 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"newsContent\"\n        v-bind:style=\"{overflow:'auto',height:'100%'}\"\n        v-on:scroll=\"scroll($event)\">\n    <div class=\"headerText\">{{headerText}}</div>\n    <div class=\"hacker-article-list\" >\n        <articleitem v-for=\"item in api.items | orderBy 'time' \" :item=\"item\"></articleitem>\n    </div>\n</div>\n";
 
 /***/ }
 /******/ ]);

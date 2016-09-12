@@ -9,6 +9,7 @@ import asks from "./components/asks.vue";
 import jobs from "./components/jobs.vue";
 import contents from "./components/contents.vue";
 import users from "./components/users.vue";
+import submits from "./components/submits.vue";
 
 Vue.use(Router);
 Vue.use(Resource);
@@ -37,6 +38,9 @@ router.map({
     },
     '/users':{
         component:users
+    },
+    '/submits':{
+        component:submits
     }
 });
 
