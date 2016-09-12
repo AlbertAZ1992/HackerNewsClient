@@ -4,7 +4,7 @@
             v-on:scroll="scroll($event)">
         <div class="headerText" v-show="headerText">{{headerText}}</div>
         <div class="hacker-article-list" >
-            <articleitem v-for="item in api.items | orderBy 'time' -1" :item="item"></articleitem>
+            <articleitem v-for="item in api.items | orderBy 'score' -1" :item="item"></articleitem>
         </div>
     </div>
 </template>

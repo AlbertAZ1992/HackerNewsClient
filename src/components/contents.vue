@@ -53,9 +53,9 @@
                 copyright: "© 2016",
                 author: " Albert ",
                 authorurl: "http://deacyn.com",
-                tool: "HN API",
+                tool: " HN API",
                 toolurl: "https://github.com/HackerNews/API",
-                repo: "HackerNewsClient",
+                repo: " HackerNewsClient ",
                 repourl: "https://github.com/Deacyn/HackerNewsClient"
 
             }
