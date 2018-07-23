@@ -6,7 +6,7 @@
 
 ## Demo
 
-#### [Demo地址](http://albertaz.me/demos/hackernews/)
+#### [Demo地址](http://albertaz.com/blog/demos/hackernews)
 
 ## Files
 
